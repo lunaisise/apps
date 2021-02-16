@@ -304,6 +304,7 @@ window.addEventListener('DOMContentLoaded', () => {
         changeHeat();
 
         document.querySelector('#detail-check')['checked'] = true;
+        changeUrl();
     }
 
     /**
