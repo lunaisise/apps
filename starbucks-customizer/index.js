@@ -293,15 +293,13 @@ window.addEventListener('DOMContentLoaded', () => {
         document.querySelectorAll('[data-type="change"] [data-custom], [data-type="add"] [data-custom]').forEach(elem => {
             elem.classList.add('dnone');
         });
-        if (customizes === undefined) {
-            alert('可能なカスタマイズ項目が設定されていません。');
-            return;
-        }
-        Object.keys(customizes).forEach(typeName => {
-            customizes[typeName].forEach(customName => {
-                document.querySelector(`[data-type="${typeName}"] > [data-custom="${customName}"]`).classList.remove('dnone');
+        if (customizes !== undefined) {
+            Object.keys(customizes).forEach(typeName => {
+                customizes[typeName].forEach(customName => {
+                    document.querySelector(`[data-type="${typeName}"] > [data-custom="${customName}"]`).classList.remove('dnone');
+                });
             });
-        });
+        }
 
         changeHeat();
 
@@ -317,11 +315,13 @@ window.addEventListener('DOMContentLoaded', () => {
         document.querySelectorAll('[data-type="change"] [data-custom]').forEach(elem => {
             elem.classList.add('dnone');
         });
-        const customizes = beverageHasCustoms[beverageId]['change'];
-        if (customizes !== null) {
-            customizes.forEach(customName => {
-                document.querySelector(`[data-type="change"] > [data-custom="${customName}"]`).classList.remove('dnone');
-            });
+        if (Object.keys(beverageHasCustoms).includes(beverageId) && Object.keys(beverageHasCustoms[beverageId]).includes('change')) {
+            const customizes = beverageHasCustoms[beverageId]['change'];
+            if (customizes !== null) {
+                customizes.forEach(customName => {
+                    document.querySelector(`[data-type="change"] > [data-custom="${customName}"]`).classList.remove('dnone');
+                });
+            }
         }
         if (id === 'hot') {
             document.querySelector('[data-type="change"] > [data-custom="ice"]').classList.add('dnone');
