@@ -42,6 +42,7 @@ body {
 header {
     align-items: center;
     background-image: linear-gradient(135deg, rgba(255, 255, 255, .3), rgba(255, 255, 255, .1));
+    -webkit-backdrop-filter: blur(5px);
     backdrop-filter: blur(5px);
     border-bottom: 1px solid rgba(255, 255, 255, .5);
     display: flex;
@@ -71,6 +72,7 @@ ul {
 #categories h2 {
     align-items: center;
     background-image: linear-gradient(135deg, rgba(255, 255, 255, .3), rgba(255, 255, 255, .1));
+    -webkit-backdrop-filter: blur(5px);
     backdrop-filter: blur(5px);
     border-top: 1px solid rgba(255, 255, 255, .5);
     border-bottom: 1px solid rgba(255, 255, 255, .5);
@@ -95,6 +97,7 @@ ul {
 }
 
 #categories button {
+    background-image: linear-gradient(135deg, rgba(255, 255, 255, .3), rgba(255, 255, 255, .1));
     border: 1px solid rgba(255, 255, 255, .5);
     border-radius: .5rem;
     cursor: pointer;
@@ -162,6 +165,7 @@ ul {
 
 [for="detail-check"] {
     background-image: linear-gradient(135deg, rgba(255, 255, 255, .7), rgba(255, 255, 255, .5));
+    -webkit-backdrop-filter: blur(5px);
     backdrop-filter: blur(5px);
     border: 1px solid rgba(255, 255, 255, .5);
     border-radius: 0 .75rem 0 .75rem;
@@ -199,6 +203,7 @@ ul {
 
 #detail {
     background-image: linear-gradient(135deg, rgba(255, 255, 255, .7), rgba(255, 255, 255, .5));
+    -webkit-backdrop-filter: blur(5px);
     backdrop-filter: blur(5px);
     border: 1px solid rgba(255, 255, 255, .5);
     border-radius: .75rem;
@@ -214,6 +219,7 @@ ul {
 
 #detail > h2 {
     background-image: linear-gradient(135deg, rgba(255, 255, 255, .7), rgba(255, 255, 255, .5));
+    -webkit-backdrop-filter: blur(5px);
     backdrop-filter: blur(5px);
     border-bottom: 1px solid rgba(255, 255, 255, .5);
     margin: 0;
@@ -308,6 +314,7 @@ ul {
 
 #spelling {
     background-image: linear-gradient(135deg, rgba(255, 255, 255, .7), rgba(255, 255, 255, .5));
+    -webkit-backdrop-filter: blur(5px);
     backdrop-filter: blur(5px);
     border: 1px solid rgba(255, 255, 255, .5);
     border-radius: .75rem;
