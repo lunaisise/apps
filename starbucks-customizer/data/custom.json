@@ -1,0 +1,385 @@
+{
+    "change": {
+        "ice": {
+            "ja": "氷",
+            "spel": "アイス",
+            "price": 0,
+            "custom": {
+                "full": {
+                    "ja": "変更なし",
+                    "spel": ""
+                },
+                "light": {
+                    "ja": "少なめ",
+                    "spel": "ライト"
+                },
+                "none": {
+                    "ja": "無し",
+                    "spel": "ノン"
+                }
+            }
+        },
+        "heat": {
+            "ja": "温度",
+            "spel": "ホット",
+            "price": 0,
+            "custom": {
+                "extra": {
+                    "ja": "熱め",
+                    "spel": "エクストラ"
+                },
+                "full": {
+                    "ja": "変更なし",
+                    "spel": ""
+                },
+                "light": {
+                    "ja": "ぬるめ",
+                    "spel": "ライト"
+                }
+            }
+        },
+        "milk": {
+            "ja": "ミルク",
+            "spel": "ミルク",
+            "price": 0,
+            "custom": {
+                "full": {
+                    "ja": "変更なし",
+                    "spel": ""
+                },
+                "lowfat": {
+                    "ja": "低脂肪乳",
+                    "spel": "ローファット"
+                },
+                "nonefat": {
+                    "ja": "無脂肪乳",
+                    "spel": "ノンファット"
+                },
+                "soymilk": {
+                    "ja": "豆乳",
+                    "spel": "ソイミルク"
+                },
+                "almondmilk": {
+                    "ja": "アーモンドミルク",
+                    "spel": "アーモンドミルク"
+                }
+            }
+        },
+        "all_milk": {
+            "ja": "オールミルク",
+            "spel": "オールミルク",
+            "price": 0,
+            "custom": {
+                "full": {
+                    "ja": "変更なし",
+                    "spel": ""
+                },
+                "all_milk": {
+                    "ja": "オールミルク",
+                    "spel": "オールミルク"
+                }
+            }
+        },
+        "listlet": {
+            "ja": "エスプレッソ",
+            "spel": "",
+            "price": 0,
+            "custom": {
+                "listlet": {
+                    "ja": "濃いめ",
+                    "spel": "リストレット"
+                },
+                "full": {
+                    "ja": "変更なし",
+                    "spel": ""
+                }
+            }
+        },
+        "whipped_cream": {
+            "ja": "ホイップクリーム",
+            "spel": "ホイップクリーム",
+            "price": 0,
+            "custom": {
+                "extra": {
+                    "ja": "多め",
+                    "spel": "エクストラ"
+                },
+                "full": {
+                    "ja": "変更なし",
+                    "spel": ""
+                },
+                "light": {
+                    "ja": "少なめ",
+                    "spel": "ライト"
+                },
+                "none": {
+                    "ja": "無し",
+                    "spel": "ノン"
+                }
+            }
+        },
+        "foamed_milk": {
+            "ja": "フォームミルク",
+            "spel": "フォーム",
+            "price": 0,
+            "custom": {
+                "extra": {
+                    "ja": "多め",
+                    "spel": "フォーミー"
+                },
+                "full": {
+                    "ja": "変更なし",
+                    "spel": ""
+                },
+                "light": {
+                    "ja": "少なめ",
+                    "spel": "ライト"
+                },
+                "none": {
+                    "ja": "無し",
+                    "spel": "ノン"
+                }
+            }
+        },
+        "chocolate_source": {
+            "ja": "チョコレートソース",
+            "spel": "チョコレートソース",
+            "price": 0,
+            "custom": {
+                "extra": {
+                    "ja": "多め",
+                    "spel": "エクストラ"
+                },
+                "full": {
+                    "ja": "変更なし",
+                    "spel": ""
+                },
+                "light": {
+                    "ja": "少なめ",
+                    "spel": "ライト"
+                },
+                "none": {
+                    "ja": "無し",
+                    "spel": "ノン"
+                }
+            }
+        },
+        "chalamel_source": {
+            "ja": "キャラメルソース",
+            "spel": "キャラメルソース",
+            "price": 0,
+            "custom": {
+                "extra": {
+                    "ja": "多め",
+                    "spel": "エクストラ"
+                },
+                "full": {
+                    "ja": "変更なし",
+                    "spel": ""
+                },
+                "light": {
+                    "ja": "少なめ",
+                    "spel": "ライト"
+                },
+                "none": {
+                    "ja": "無し",
+                    "spel": "ノン"
+                }
+            }
+        },
+        "chalamel_sirup": {
+            "ja": "キャラメルシロップ",
+            "spel": "キャラメルシロップ",
+            "price": 0,
+            "custom": {
+                "extra": {
+                    "ja": "多め",
+                    "spel": "エクストラ"
+                },
+                "full": {
+                    "ja": "変更なし",
+                    "spel": ""
+                },
+                "light": {
+                    "ja": "少なめ",
+                    "spel": "ライト"
+                },
+                "none": {
+                    "ja": "無し",
+                    "spel": "ノン"
+                }
+            }
+        },
+        "powder": {
+            "ja": "パウダー",
+            "spel": "パウダー",
+            "price": 0,
+            "custom": {
+                "extra": {
+                    "ja": "多め",
+                    "spel": "エクストラ"
+                },
+                "full": {
+                    "ja": "変更なし",
+                    "spel": ""
+                },
+                "light": {
+                    "ja": "少なめ",
+                    "spel": "ライト"
+                },
+                "none": {
+                    "ja": "無し",
+                    "spel": "ノン"
+                }
+            }
+        },
+        "chocolate_tip": {
+            "ja": "チョコレートチップ",
+            "spel": "チップ",
+            "price": 0,
+            "custom": {
+                "extra": {
+                    "ja": "多め",
+                    "spel": "エクストラ"
+                },
+                "full": {
+                    "ja": "変更なし",
+                    "spel": ""
+                },
+                "light": {
+                    "ja": "少なめ",
+                    "spel": "ライト"
+                },
+                "none": {
+                    "ja": "無し",
+                    "spel": "ノン"
+                }
+            }
+        }
+    },
+    "add": {
+        "espresso_shot": {
+            "ja": "エスプレッソショット",
+            "spel": "エスプレッソショット",
+            "price": 50
+        },
+        "coffee": {
+            "ja": "コーヒー",
+            "spel": "コーヒー",
+            "price": 50
+        },
+        "coffee_roast": {
+            "ja": "コーヒーロースト",
+            "spel": "コーヒーロースト",
+            "price": 50
+        },
+        "chocolate_tip": {
+            "ja": "チョコレートチップ",
+            "spel": "チョコレートチップ",
+            "price": 50
+        },
+        "whipped_cream": {
+            "ja": "ホイップクリーム",
+            "spel": "ホイップクリーム",
+            "price": 50
+        },
+        "vanilla_sirup": {
+            "ja": "バニラシロップ",
+            "spel": "バニラシロップ",
+            "price": 50
+        },
+        "chalamel_sirup": {
+            "ja": "キャラメルシロップ",
+            "spel": "キャラメルシロップ",
+            "price": 50
+        },
+        "almond_sirup": {
+            "ja": "アーモンドシロップ",
+            "spel": "アーモンドシロップ",
+            "price": 50
+        },
+        "decaf": {
+            "ja": "ディカフェ",
+            "spel": "ディカフェ",
+            "type": "change",
+            "price": 50
+        },
+        "citrus": {
+            "ja": "シトラス果肉",
+            "spel": "シトラス果肉",
+            "price": 100
+        },
+        "tea_leaf_mint_citrus": {
+            "ja": "ミントシトラス茶葉",
+            "spel": "ミントシトラス茶葉",
+            "price": 100
+        },
+        "tea_leaf_english_breakfast": {
+            "ja": "イングリッシュブレックファースト茶葉",
+            "spel": "イングリッシュブレックファースト茶葉",
+            "price": 100
+        }
+    },
+    "condiment": {
+        "cinnamon_powder": {
+            "ja": "シナモンパウダー",
+            "spel": "シナモンパウダー",
+            "price": 0
+        },
+        "orange_vanilla_sugar": {
+            "ja": "オレンジバニラシュガー",
+            "spel": "オレンジバニラシュガー",
+            "price": 0
+        },
+        "coffee_powder": {
+            "ja": "コーヒーパウダー",
+            "spel": "コーヒーパウダー",
+            "price": 0
+        },
+        "cocoa_powder": {
+            "ja": "ココアパウダー",
+            "spel": "ココアパウダー",
+            "price": 0
+        },
+        "brown_sugar": {
+            "ja": "ブラウンシュガー",
+            "spel": "ブラウンシュガー",
+            "price": 0
+        },
+        "pack_sugar": {
+            "ja": "パックシュガー",
+            "spel": "パックシュガー",
+            "price": 0
+        },
+        "diet_sugar": {
+            "ja": "ダイエットシュガー",
+            "spel": "ダイエットシュガー",
+            "price": 0
+        },
+        "portion_milk": {
+            "ja": "ポーションミルク",
+            "spel": "ポーションミルク",
+            "price": 0
+        },
+        "milk": {
+            "ja": "ミルク",
+            "spel": "ミルク",
+            "price": 0
+        },
+        "nonfat_milk": {
+            "ja": "無脂肪乳",
+            "spel": "無脂肪乳",
+            "price": 0
+        },
+        "honey": {
+            "ja": "はちみつ",
+            "spel": "はちみつ",
+            "price": 0
+        },
+        "gum_syrup": {
+            "ja": "ガムシロップ",
+            "spel": "ガムシロップ",
+            "price": 0
+        }
+    }
+}
