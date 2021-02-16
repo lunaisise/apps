@@ -289,9 +289,13 @@ window.addEventListener('DOMContentLoaded', () => {
             document.querySelector('#detail [name="sizes"]')['checked'] = true;
         }
 
-        document.querySelectorAll('[data-type="change"] [data-custom], [data-type="add"] [data-custom], [data-type="condiment"] [data-custom]').forEach(elem => {
+        document.querySelectorAll('[data-type="change"] [data-custom], [data-type="add"] [data-custom]').forEach(elem => {
             elem.classList.add('dnone');
         });
+        if (customizes === undefined) {
+            alert('可能なカスタマイズ項目が設定されていません。');
+            return;
+        }
         Object.keys(customizes).forEach(typeName => {
             customizes[typeName].forEach(customName => {
                 document.querySelector(`[data-type="${typeName}"] > [data-custom="${customName}"]`).classList.remove('dnone');
