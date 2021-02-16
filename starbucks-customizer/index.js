@@ -244,7 +244,8 @@ window.addEventListener('DOMContentLoaded', () => {
         const beverage = beverages[category]['menu'][id];
         const customizes = beverageHasCustoms[id];
 
-        document.querySelector('#detail > h2').textContent = beverage['name'];
+        document.querySelector('#detail > h2 > a').textContent = beverage['name'];
+        document.querySelector('#detail > h2 > a').setAttribute('href', `https://product.starbucks.co.jp/beverage/${category}/${id}/`);
         if (beverage['isLimination']) {
             document.querySelector('#detail > .limited').classList.remove('dnone');
         } else {
@@ -513,10 +514,11 @@ window.addEventListener('DOMContentLoaded', () => {
             // console.log(elemId);
             add.push(elemId);
             const addSelection = customs['add'][elemId];
-            const addType = addSelection['type'] === 'change' ? 'に変更' : 'を追加';
-            const addJa = `${addSelection['ja']}${addType}`;
+            const addTypeJa = addSelection['type'] === 'change' ? 'に変更' : 'を追加';
+            const addJa = `${addSelection['ja']}${addTypeJa}`;
             orderJa += ` ${addJa}`;
-            const addSpel = `アド${addSelection['spel']}`;
+            const addTypeSpel = addSelection['type'] === 'change' ? 'チェンジ' : 'アド';
+            const addSpel = `${addTypeSpel}${addSelection['spel']}`;
             orderSpel += ` ${addSpel}`;
         });
 
