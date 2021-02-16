@@ -555,9 +555,9 @@ window.addEventListener('DOMContentLoaded', () => {
             history.pushState(null, null, '/apps/starbucks-customizer/');
         }
         let searches = [];
-        searches.push(`id="${beverageId}"`);
-        searches.push(`heat="${heat}"`);
-        searches.push(`size="${size}"`);
+        searches.push(`id=${beverageId}`);
+        searches.push(`heat=${heat}`);
+        searches.push(`size=${size}`);
         const changeParam = JSON.stringify(change);
         searches.push(`change=${changeParam}`);
         const addParam = JSON.stringify(add);
