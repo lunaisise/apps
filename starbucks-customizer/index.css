@@ -179,6 +179,7 @@ ul {
 [for="detail-check"]::before,
 [for="detail-check"]::after {
     background-color: #777;
+    border-radius: .2rem;
     content: '';
     display: block;
     height: .2rem;
