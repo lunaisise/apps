@@ -19,6 +19,21 @@
                 }
             }
         },
+        "ice_milk": {
+            "ja": "ミルク",
+            "spel": "ミルク",
+            "price": 0,
+            "custom": {
+                "extra": {
+                    "ja": "多め",
+                    "spel": "エクストラ"
+                },
+                "full": {
+                    "ja": "変更なし",
+                    "spel": ""
+                }
+            }
+        },
         "heat": {
             "ja": "温度",
             "spel": "ホット",
@@ -39,7 +54,7 @@
             }
         },
         "milk": {
-            "ja": "ミルク",
+            "ja": "ミルクの種類",
             "spel": "ミルク",
             "price": 0,
             "custom": {
@@ -55,13 +70,9 @@
                     "ja": "無脂肪乳",
                     "spel": "ノンファット"
                 },
-                "soymilk": {
-                    "ja": "豆乳",
-                    "spel": "ソイミルク"
-                },
                 "almondmilk": {
                     "ja": "アーモンドミルク",
-                    "spel": "アーモンドミルク"
+                    "spel": "アーモンド"
                 }
             }
         },
@@ -273,14 +284,16 @@
             "spel": "コーヒーロースト",
             "price": 50
         },
-        "chocolate_tip": {
-            "ja": "チョコレートチップ",
-            "spel": "チョコレートチップ",
+        "decaf": {
+            "ja": "ディカフェ",
+            "spel": "ディカフェ",
+            "type": "change",
             "price": 50
         },
-        "whipped_cream": {
-            "ja": "ホイップクリーム",
-            "spel": "ホイップクリーム",
+        "soymilk": {
+            "ja": "豆乳",
+            "spel": "ソイ",
+            "type": "change",
             "price": 50
         },
         "vanilla_sirup": {
@@ -298,10 +311,14 @@
             "spel": "アーモンドシロップ",
             "price": 50
         },
-        "decaf": {
-            "ja": "ディカフェ",
-            "spel": "ディカフェ",
-            "type": "change",
+        "whipped_cream": {
+            "ja": "ホイップクリーム",
+            "spel": "ホイップクリーム",
+            "price": 50
+        },
+        "chocolate_tip": {
+            "ja": "チョコレートチップ",
+            "spel": "チョコレートチップ",
             "price": 50
         },
         "citrus": {

@@ -323,9 +323,12 @@ window.addEventListener('DOMContentLoaded', () => {
             });
         }
         if (id === 'hot') {
-            document.querySelector('[data-custom="ice"]').classList.add('dnone');
+            document.querySelector('[data-type="change"] > [data-custom="ice"]').classList.add('dnone');
+            document.querySelector('[data-type="change"] > [data-custom="ice_milk"]').classList.add('dnone');
+            document.querySelector('#change-ice_milk-full')['checked'] = true;
         } else {
-            document.querySelector('[data-custom="heat"]').classList.add('dnone');
+            document.querySelector('[data-type="change"] > [data-custom="heat"]').classList.add('dnone');
+            document.querySelector('[data-type="change"] > [data-custom="ice_milk"]').classList.add('dnone');
         }
     }
 
@@ -351,6 +354,13 @@ window.addEventListener('DOMContentLoaded', () => {
         const id = elem.id;
         const text = document.querySelector(`[for="${id}"]`).textContent;
         elem.closest('[data-custom]').querySelector('.selected').textContent = text;
+
+        if (document.querySelector('#change-ice-light:checked') !== null) {
+            document.querySelector('[data-type="change"] > [data-custom="ice_milk"]').classList.remove('dnone');
+        } else {
+            document.querySelector('[data-type="change"] > [data-custom="ice_milk"]').classList.add('dnone');
+            document.querySelector('#change-ice_milk-full')['checked'] = true;
+        }
     }
 
     //
