@@ -333,7 +333,9 @@ window.addEventListener('DOMContentLoaded', () => {
                 alert(error);
             });
     }
+    alert('before getHeats');
     getHeats();
+    alert('after getHeats');
 
     /**
      * OrderとCustomを切り替え
