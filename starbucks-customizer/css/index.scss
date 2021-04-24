@@ -1,0 +1,104 @@
+$glass-background: linear-gradient(135deg, rgba(255, 255, 255, .7), rgba(255, 255, 255, .5));
+$glass-border: 1px solid rgba(255, 255, 255, .8);
+
+h1 {
+    height: 4.5rem;
+}
+
+#categories {
+    margin-bottom: 4.6rem;
+}
+
+h2 {
+    background-image: $glass-background;
+    backdrop-filter: blur(.25rem);
+    border-top: $glass-border;
+    border-bottom: $glass-border;
+    margin: 0;
+    padding: 0 1rem;
+    position: sticky;
+    top: 4.5rem;
+    width: 100%;
+
+    & + ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 0 1rem 1rem;
+
+        & > li {
+            background-image: $glass-background;
+            border: $glass-border;
+            border-radius: 1rem;
+            box-shadow: 0 .5rem 2rem 0 rgba(0, 112, 74, .37);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            margin: 1rem 0 0;
+            padding: 1rem;
+            width: calc(50% - .5rem);
+
+            & > div {
+                & > h3 {
+                    margin: 0;
+                    text-align: center;
+                }
+
+                & > ul {
+                    margin: .5rem 0;
+                }
+
+                & > .special-items > li {
+                    align-items: center;
+                    background-color: rgb(56, 56, 56, .8);
+                    color: #fff;
+                    display: flex;
+                    justify-content: center;
+                }
+
+                & > .heats {
+                    display: flex;
+                    justify-content: center;
+
+                    & > li {
+                        border-radius: .5rem;
+                        text-align: center;
+                        min-width: 50%;
+
+                        &:nth-last-child(2) {
+                            border-top-right-radius: 0;
+                            border-bottom-right-radius: 0;
+                        }
+
+                        &:nth-child(2) {
+                            border-top-left-radius: 0;
+                            border-bottom-left-radius: 0;
+                        }
+                    }
+                }
+
+                & > .sizes > li {
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: space-between;
+
+                    & > .price::before {
+                        content: '￥';
+                    }
+                }
+            }
+
+            & > a {
+                width: 100%;
+
+                & > button {
+                    align-items: center;
+                    display: flex;
+                    height: 2rem;
+                    justify-content: center;
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

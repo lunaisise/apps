@@ -2,14 +2,17 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0", minimal-ui>
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta name="theme-color" content="#00704a">
 <title>Starbucks Customizer | lunaisise Apps</title>
-<link rel='manifest' href='./manifest.json'>
-<link rel="apple-touch-icon" sizes="180x180" href="./image/180x180.png">
-<link rel="stylesheet" href="./index.css">
+<link rel="manifest" href="./manifest.json">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Icons">
+<link rel="stylesheet" href="./css/material-icons.min.css">
+<link rel="stylesheet" href="./css/common.min.css">
+<link rel="stylesheet" href="./css/index.min.css">
 </head>
 <body>
 
@@ -21,118 +24,41 @@
   <ul id="categories"></ul>
 </main>
 
-<input type="checkbox" id="detail-check" class="dnone">
-<div id="detail-back">
-  <label for="detail-check"></label>
-  <div id="detail">
-    <h2><a href="" target="_blank"></a></h2>
-    <p class="limited">限定店舗</p>
-    <h3>HOT / ICED</h3>
-    <ul class="heats"></ul>
-    <h3>サイズ</h3>
-    <ul class="sizes"></ul>
-    <h3>カスタマイズ</h3>
-    <h4>無料カスタム</h4>
-    <ul data-type="change"></ul>
-    <h4>有料カスタム</h4>
-    <ul data-type="add"></ul>
-    <h4>コンディメントバー</h4>
-    <ul data-type="condiment"></ul>
-  </div>
-  <input type="checkbox" id="spelling-knob" class="dnone">
-  <div id="spelling">
-    <label for="spelling-knob"></label>
-    <h3>注文：日本語</h3>
-    <p id="ja">トール ホット ドリップコーヒー</p>
-    <h3>注文：呪文</h3>
-    <p id="spel">トール ホット ドリップコーヒー</p>
-    <h3>金額</h3>
-    <p id="total"><span class="price">330</span> + (税)</p>
-    <h3>コンディメントバー</h3>
-    <p id="condiment"></p>
-  </div>
-</div>
-
-<template id="category-template">
-  <ul>
-    <li id="" class="category">
-      <h2></h2>
-      <ul class="beverages"></ul>
-    </li>
+<footer>
+  <ul id="footer-menu" class="dnone">
+    <li class="dnone"><a href=""><i class="mi mi-bookmarks"></i><span>My Lists</span></a></li>
+    <li><button type="button" id="share-button"><i class="mi mi-share"></i><span>Share</span></button></li>
   </ul>
+  <ul id="footer-buttons">
+    <li><button type="button" id="more-button"><i class="mi mi-more_vert"></i></button></li>
+  </ul>
+</footer>
+
+<template id="drink-type-template">
+  <li id="">
+    <h2></h2>
+    <ul></ul>
+  </li>
 </template>
 
-<template id="beverage-template">
-  <ul>
-    <li class="beverage">
-      <button type="button" data-id="">
-        <h3></h3>
-        <p class="limited">限定店舗</p>
-        <p class="heats"></p>
-        <ul class="sizes"></ul>
-      </button>
-    </li>
-  </ul>
+<template id="drink-template">
+  <li>
+    <div>
+      <h3></h3>
+      <ul class="special-items"></ul>
+      <ul class="heats"></ul>
+      <ul class="sizes"></ul>
+    </div>
+    <a href=""><button type="button" class="button">カスタム</button></a>
+  </li>
 </template>
 
 <template id="size-template">
-  <ul>
-    <li class="size"><span class="size-name"></span><span class="price"></span></li>
-  </ul>
+  <li><span class="size"></span><span class="price"></span></li>
 </template>
 
-<template id="detail-heat-template">
-  <ul>
-    <li class=""><input type="radio" name="heats" id=""><label for=""></label></li>
-  </ul>
-</template>
-
-<template id="detail-size-template">
-  <ul>
-    <li class="size">
-      <input type="radio" name="sizes" id=""><label for=""><span class="size-name"></span><span class="price"></span></label>
-    </li>
-  </ul>
-</template>
-
-<template id="change-template">
-  <ul>
-    <li data-custom="">
-      <input type="checkbox" id="" class="dnone">
-      <label for=""><span class="custom-name"></span><span class="selected"></span></label>
-      <ul></ul>
-    </li>
-  </ul>
-</template>
-
-<template id="change-custom-template">
-  <ul>
-    <li>
-      <input type="radio" name="" id="">
-      <label for=""></label>
-    </li>
-  </ul>
-</template>
-
-<template id="add-template">
-  <ul>
-    <li data-custom="">
-      <input type="checkbox" id="">
-      <label for=""><span class="custom-name"></span> <span class="add-type">追加</span><br>+<span class="price"></span></label>
-    </li>
-  </ul>
-</template>
-
-<template id="condiment-template">
-  <ul>
-    <li data-custom="">
-      <input type="checkbox" id="">
-      <label for="" class="custom-name"></label>
-    </li>
-  </ul>
-</template>
-
-<script src="./index.js"></script>
+<script src="./js/common.js"></script>
+<script src="./js/index.js"></script>
 
 </body>
 </html>

@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0", minimal-ui>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="theme-color" content="#00704a">
+<title>キャラメル マキアート | Starbucks Customizer | lunaisise Apps</title>
+<link rel="manifest" href="../manifest.json">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Icons">
+<link rel="stylesheet" href="../css/material-icons.min.css">
+<link rel="stylesheet" href="../css/common.min.css">
+<link rel="stylesheet" href="../css/drink.min.css">
+</head>
+<body>
+
+<header>
+  <h1><a href="../" id="history-back"><i class="mi mi-navigate_before"></i></a><span>キャラメル マキアート</span></h1>
+</header>
+
+<main>
+  <div id="custom">
+    <h2>カスタマイズ</h2>
+    <h4>温度</h4>
+    <ul id="heats">
+      <li data-heat="1" style="background-color: #ffcabf;">
+  <input type="radio" name="heats" id="HOT" data-heat="1" checked>
+  <label for="HOT">
+    <i class="mi"></i>
+    <span>HOT</span>
+  </label>
+</li><li data-heat="2" style="background-color: #bfe4ff;">
+  <input type="radio" name="heats" id="ICED" data-heat="2">
+  <label for="ICED">
+    <i class="mi"></i>
+    <span>ICED</span>
+  </label>
+</li>
+    </ul>
+    <h4>サイズ</h4>
+    <ul id="sizes">
+      <li>
+  <input type="radio" name="sizes" id="Short" data-size="1">
+  <label for="Short">
+    <i class="mi"></i>
+    <span class="size">Short</span>
+    <span class="price">390</span>
+  </label>
+</li><li>
+  <input type="radio" name="sizes" id="Tall" data-size="2" checked>
+  <label for="Tall">
+    <i class="mi"></i>
+    <span class="size">Tall</span>
+    <span class="price">430</span>
+  </label>
+</li><li>
+  <input type="radio" name="sizes" id="Grande" data-size="3">
+  <label for="Grande">
+    <i class="mi"></i>
+    <span class="size">Grande</span>
+    <span class="price">470</span>
+  </label>
+</li><li>
+  <input type="radio" name="sizes" id="Venti®" data-size="4">
+  <label for="Venti®">
+    <i class="mi"></i>
+    <span class="size">Venti®</span>
+    <span class="price">510</span>
+  </label>
+</li>
+    </ul>
+    <h4>カスタム</h4>
+    <ul id="customs">
+      <li data-type="3">
+  <input type="checkbox" id="ct-hot">
+  <label for="ct-hot">
+    <span class="mi custom-name">温度</span>
+    <span class="my-custom"></span>
+  </label>
+  <ul class="customs">
+    <li data-custom="6">
+    <input type="radio" name="hot" id="hot-default" data-type="3" data-custom="6" checked>
+    <label for="hot-default">
+    <i class="mi"></i>
+    <span>標準</span>
+    </label>
+</li><li data-custom="5">
+    <input type="radio" name="hot" id="hot-light-hot" data-type="3" data-custom="5">
+    <label for="hot-light-hot">
+    <i class="mi"></i>
+    <span>ぬるめ</span>
+    </label>
+</li>
+  </ul>
+</li><li data-type="1">
+  <input type="checkbox" id="ct-ice">
+  <label for="ct-ice">
+    <span class="mi custom-name">氷</span>
+    <span class="my-custom"></span>
+  </label>
+  <ul class="customs">
+    <li data-custom="6">
+    <input type="radio" name="ice" id="ice-default" data-type="1" data-custom="6" checked>
+    <label for="ice-default">
+    <i class="mi"></i>
+    <span>標準</span>
+    </label>
+</li><li data-custom="1">
+    <input type="radio" name="ice" id="ice-light" data-type="1" data-custom="1">
+    <label for="ice-light">
+    <i class="mi"></i>
+    <span>少なめ</span>
+    </label>
+</li><li data-custom="2">
+    <input type="radio" name="ice" id="ice-none" data-type="1" data-custom="2">
+    <label for="ice-none">
+    <i class="mi"></i>
+    <span>なし</span>
+    </label>
+</li>
+  </ul>
+</li><li data-type="2">
+  <input type="checkbox" id="ct-milk">
+  <label for="ct-milk">
+    <span class="mi custom-name">ミルクの量</span>
+    <span class="my-custom"></span>
+  </label>
+  <ul class="customs">
+    <li data-custom="6">
+    <input type="radio" name="milk" id="milk-default" data-type="2" data-custom="6" checked>
+    <label for="milk-default">
+    <i class="mi"></i>
+    <span>標準</span>
+    </label>
+</li><li data-custom="3">
+    <input type="radio" name="milk" id="milk-extra" data-type="2" data-custom="3">
+    <label for="milk-extra">
+    <i class="mi"></i>
+    <span>多め</span>
+    </label>
+</li>
+  </ul>
+</li><li data-type="8">
+  <input type="checkbox" id="ct-caramel_sauce">
+  <label for="ct-caramel_sauce">
+    <span class="mi custom-name">キャラメルソース</span>
+    <span class="my-custom"></span>
+  </label>
+  <ul class="customs">
+    <li data-custom="6">
+    <input type="radio" name="caramel_sauce" id="caramel_sauce-default" data-type="8" data-custom="6" checked>
+    <label for="caramel_sauce-default">
+    <i class="mi"></i>
+    <span>標準</span>
+    </label>
+</li><li data-custom="3">
+    <input type="radio" name="caramel_sauce" id="caramel_sauce-extra" data-type="8" data-custom="3">
+    <label for="caramel_sauce-extra">
+    <i class="mi"></i>
+    <span>多め</span>
+    </label>
+</li>
+  </ul>
+</li>
+    </ul>
+    <h4>コンディメントバー</h4>
+    <ul id="condiment-bar">
+      <li>
+  <input type="checkbox" id="cb-cinnamon_powder" data-condiment="1">
+  <label for="cb-cinnamon_powder">
+    <i class="mi"></i>
+    <span>シナモンパウダー</span>
+  </label>
+</li><li>
+  <input type="checkbox" id="cb-orange_vanilla_sugar" data-condiment="2">
+  <label for="cb-orange_vanilla_sugar">
+    <i class="mi"></i>
+    <span>オレンジバニラシュガー</span>
+  </label>
+</li><li>
+  <input type="checkbox" id="cb-coffee_powder" data-condiment="3">
+  <label for="cb-coffee_powder">
+    <i class="mi"></i>
+    <span>コーヒーパウダー</span>
+  </label>
+</li><li>
+  <input type="checkbox" id="cb-cocoa_powder" data-condiment="4">
+  <label for="cb-cocoa_powder">
+    <i class="mi"></i>
+    <span>ココアパウダー</span>
+  </label>
+</li><li>
+  <input type="checkbox" id="cb-brown_sugar" data-condiment="5">
+  <label for="cb-brown_sugar">
+    <i class="mi"></i>
+    <span>ブラウンシュガー</span>
+  </label>
+</li><li>
+  <input type="checkbox" id="cb-pack_sugar" data-condiment="6">
+  <label for="cb-pack_sugar">
+    <i class="mi"></i>
+    <span>パックシュガー</span>
+  </label>
+</li><li>
+  <input type="checkbox" id="cb-diet_sugar" data-condiment="7">
+  <label for="cb-diet_sugar">
+    <i class="mi"></i>
+    <span>ダイエットシュガー</span>
+  </label>
+</li><li>
+  <input type="checkbox" id="cb-portion_milk" data-condiment="8">
+  <label for="cb-portion_milk">
+    <i class="mi"></i>
+    <span>ポーションミルク</span>
+  </label>
+</li><li>
+  <input type="checkbox" id="cb-milk" data-condiment="9">
+  <label for="cb-milk">
+    <i class="mi"></i>
+    <span>ミルク</span>
+  </label>
+</li><li>
+  <input type="checkbox" id="cb-nonfat_milk" data-condiment="10">
+  <label for="cb-nonfat_milk">
+    <i class="mi"></i>
+    <span>無脂肪乳</span>
+  </label>
+</li><li>
+  <input type="checkbox" id="cb-honey" data-condiment="11">
+  <label for="cb-honey">
+    <i class="mi"></i>
+    <span>はちみつ</span>
+  </label>
+</li><li>
+  <input type="checkbox" id="cb-gum_syrup" data-condiment="12">
+  <label for="cb-gum_syrup">
+    <i class="mi"></i>
+    <span>ガムシロップ</span>
+  </label>
+</li>
+    </ul>
+  </div>
+
+  <div id="order" class="dnone">
+  <h2>注文内容</h2>
+  <dl>
+    <dt>温度</dt>
+    <dd id="custom-heat"><b></b></dd>
+    <dt>サイズ</dt>
+    <dd id="custom-size"><b></b></dd>
+    <dt>ドリンク</dt>
+    <dd id="custom-drink"><b>キャラメル マキアート</b></dd>
+    <dt>カスタム</dt>
+    <dd id="custom-customs">
+    <ul></ul>
+    </dd>
+  </dl>
+  </div>
+</main>
+
+<footer>
+  <ul id="footer-menu" class="dnone">
+    <li class="dnone"><button type="button" id="add-bookmark-button"><i class="mi mi-bookmark_add"></i><span>Add To My List</span></button></li>
+    <li class="dnone"><a href=""><i class="mi mi-bookmarks"></i><span>My Lists</span></a></li>
+    <li><button type="button" id="share-button"><i class="mi mi-share"></i><span>Share</span></button></li>
+  </ul>
+  <ul id="footer-buttons">
+    <li><button type="button" id="more-button"><i class="mi mi-more_vert"></i></button></li>
+    <li><button type="button" id="order-button"><i class="mi mi-speaker_notes"></i><span>Order</span></button></li>
+    <li class="dnone"><button type="button" id="custom-button"><i class="mi mi-speaker_notes"></i><span>Custom</span></button></li>
+  </ul>
+</footer>
+
+<template id="custom-change-template">
+  <li><b class="custom-custom-type-name"></b> を <b class="custom-custom-name"></b> に変更</li>
+</template>
+
+<template id="custom-add-template">
+  <li><b class="custom-custom-type-name"></b> を追加</li>
+</template>
+
+<script>
+  const drinkId = 19;
+  const drinkName = 'キャラメル マキアート';
+</script>
+<script src="../js/Classes.js"></script>
+<script src="../js/common.js"></script>
+<script src="../js/drink.js"></script>
+
+</body>
+</html>
