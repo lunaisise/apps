@@ -140,7 +140,7 @@ window.addEventListener('DOMContentLoaded', () => {
         }
         const param = params.join('&');
         const url = `${location.origin}${location.pathname}?${param}`;
-        console.log(url);
+        // console.log(url);
         history.replaceState(null, '', url);
     }
 
@@ -368,7 +368,7 @@ window.addEventListener('DOMContentLoaded', () => {
      * Orderボタンクリック
      */
     document.querySelector('#order-button').addEventListener('click', e => {
-        e.preventDefault();
+        // e.preventDefault();
         changeOrderCustomButton('order', 'custom');
     });
 
@@ -376,7 +376,7 @@ window.addEventListener('DOMContentLoaded', () => {
      * Customボタンクリック
      */
     document.querySelector('#custom-button').addEventListener('click', e => {
-        e.preventDefault();
+        // e.preventDefault();
         changeOrderCustomButton('custom', 'order');
     });
 
