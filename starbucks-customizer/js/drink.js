@@ -41,6 +41,7 @@ window.addEventListener('DOMContentLoaded', () => {
                 document.querySelector(liSelector).classList.remove(dnone);
             }
         });
+        alert('heatChangeCustoms Success');
     }
 
     /**
@@ -83,6 +84,7 @@ window.addEventListener('DOMContentLoaded', () => {
                 document.querySelector(radioSelector)['checked'] = true;
             }
         });
+        alert('customChangeFriends Success');
     }
 
     /**
@@ -110,6 +112,7 @@ window.addEventListener('DOMContentLoaded', () => {
             const custom = customTypes.getCustomType(customTypeId).getCustom(customId);
             document.querySelector(`li[data-type="${customTypeId}"] .my-custom`).textContent = createCustomText(custom);
         });
+        alert('customChangeLabel Success');
     }
 
     /**
@@ -142,6 +145,7 @@ window.addEventListener('DOMContentLoaded', () => {
         const url = `${location.origin}${location.pathname}?${param}`;
         // console.log(url);
         history.replaceState(null, '', url);
+        alert('customChangeUrl Success');
     }
 
     /**
@@ -182,6 +186,7 @@ window.addEventListener('DOMContentLoaded', () => {
             li.textContent = 'なし';
             document.querySelector('#custom-customs > ul').appendChild(li);
         }
+        alert('setOrderSheet Success');
     }
 
     /**
@@ -202,6 +207,7 @@ window.addEventListener('DOMContentLoaded', () => {
             }
             shareTexts.push(custom.customSpel + customType.customTypeSpel);
         });
+        alert('setShareTexts Success');
     }
 
     /**
@@ -214,6 +220,7 @@ window.addEventListener('DOMContentLoaded', () => {
         customChangeUrl();
         setOrderSheet();
         setShareTexts();
+        alert('checkCustom Success');
     }
 
     /**
@@ -261,6 +268,7 @@ window.addEventListener('DOMContentLoaded', () => {
                 }
             });
         }
+        alert('adaptUserSelection Success');
         checkCustom();
     }
 
@@ -272,6 +280,7 @@ window.addEventListener('DOMContentLoaded', () => {
             if (Object.keys(json).includes(`${drinkId}`)) {
                 customTypes.setDrinkHasCustoms(json[`${drinkId}`]);
             }
+            alert('getDrinkHasCustoms Success');
             adaptUserSelection();
         }, error => {
             alert('getDrinkHasCustoms');
@@ -284,6 +293,7 @@ window.addEventListener('DOMContentLoaded', () => {
     function getCustomFriends() {
         fetchGet('../data/custom_types.json', json => {
             customTypes.setCustomTypes(json);
+            alert('getCustomFriends Success');
             getDrinkHasCustoms();
         }, error => {
             alert('getCustomFriends');
@@ -296,6 +306,7 @@ window.addEventListener('DOMContentLoaded', () => {
     function getSizes() {
         fetchGet('../data/sizes.json', json => {
             sizes.setSizes(json);
+            alert('getSizes Success');
             getCustomFriends();
         }, error => {
             alert('getSizes');
@@ -308,6 +319,7 @@ window.addEventListener('DOMContentLoaded', () => {
     function getHeats() {
         fetchGet('../data/heats.json', json => {
             heats.setHeats(json);
+            alert('getHeats Success');
             getSizes();
         }, error => {
             alert('getHeats');
@@ -326,6 +338,7 @@ window.addEventListener('DOMContentLoaded', () => {
         document.querySelector(`#${enableType}`).classList.remove(dnone);
         document.querySelector(`#${disableType}-button`).closest('li').classList.remove(dnone);
         window.scroll(0, 0);
+        alert('changeOrderCustomButton Success');
     }
 
     /**
@@ -333,6 +346,7 @@ window.addEventListener('DOMContentLoaded', () => {
      */
     document.querySelector('#history-back').addEventListener('click', e => {
         e.preventDefault();
+        alert('#history-back Success');
         history.back();
     });
 
@@ -341,6 +355,7 @@ window.addEventListener('DOMContentLoaded', () => {
      */
     document.querySelectorAll('[name="heats"]').forEach(radio => {
         radio.addEventListener('change', e => {
+            alert('[name="heats"] Success');
             checkCustom();
         });
     });
@@ -350,6 +365,7 @@ window.addEventListener('DOMContentLoaded', () => {
      */
     document.querySelectorAll('[name="sizes"]').forEach(radio => {
         radio.addEventListener('change', e => {
+            alert('[name="sizes"] Success');
             checkCustom();
         });
     });
@@ -359,6 +375,7 @@ window.addEventListener('DOMContentLoaded', () => {
      */
     document.querySelectorAll(customRadioSelector).forEach(radio => {
         radio.addEventListener('change', e => {
+            alert(customRadioSelector + ' Success');
             checkCustom();
         });
     });
@@ -368,6 +385,7 @@ window.addEventListener('DOMContentLoaded', () => {
      */
     document.querySelectorAll('#condiment-bar [type="checkbox"]').forEach(checkbox => {
         checkbox.addEventListener('change', e => {
+            alert('#condiment-bar [type="checkbox"] Success');
             checkCustom();
         });
     });
@@ -377,6 +395,7 @@ window.addEventListener('DOMContentLoaded', () => {
      */
     document.querySelector('#order-button').addEventListener('click', e => {
         // e.preventDefault();
+            alert('#order-button Success');
         changeOrderCustomButton('order', 'custom');
     });
 
@@ -385,6 +404,7 @@ window.addEventListener('DOMContentLoaded', () => {
      */
     document.querySelector('#custom-button').addEventListener('click', e => {
         // e.preventDefault();
+            alert('#custom-button Success');
         changeOrderCustomButton('custom', 'order');
     });
 
