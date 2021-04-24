@@ -277,7 +277,7 @@ window.addEventListener('DOMContentLoaded', () => {
      * ドリンク-カスタム情報を取得
      */
     function getDrinkHasCustoms() {
-        fetchGet('../data/drink_has_customs.json', json => {
+        fetchGet('/apps/starbucks-customizer/data/drink_has_customs.json', json => {
             if (Object.keys(json).includes(`${drinkId}`)) {
                 customTypes.setDrinkHasCustoms(json[`${drinkId}`]);
             }
@@ -292,7 +292,7 @@ window.addEventListener('DOMContentLoaded', () => {
      * カスタム情報を取得
      */
     function getCustomFriends() {
-        fetchGet('../data/custom_types.json', json => {
+        fetchGet('/apps/starbucks-customizer/data/custom_types.json', json => {
             customTypes.setCustomTypes(json);
             alert('getCustomFriends Success');
             getDrinkHasCustoms();
@@ -305,7 +305,7 @@ window.addEventListener('DOMContentLoaded', () => {
      * サイズ情報を取得
      */
     function getSizes() {
-        fetchGet('../data/sizes.json', json => {
+        fetchGet('/apps/starbucks-customizer/data/sizes.json', json => {
             sizes.setSizes(json);
             alert('getSizes Success');
             getCustomFriends();
@@ -318,7 +318,7 @@ window.addEventListener('DOMContentLoaded', () => {
      * 温度情報を取得
      */
     function getHeats() {
-        fetchGet('../data/heats.json', json => {
+        fetchGet('/apps/starbucks-customizer/data/heats.json', json => {
             heats.setHeats(json);
             alert('getHeats Success');
             getSizes();
