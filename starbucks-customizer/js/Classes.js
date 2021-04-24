@@ -1,6 +1,12 @@
-// const heats;
+// const heats = [];
+// const heatsMap = {};
 // function setHeats(json) {
-
+//     Object.keys(json).forEach(key => {
+//         heats.push(new Heat(json[key]));
+//     });
+//     Object.keys(this.heats).forEach(i => {
+//         heatsMap[this.heats[i].heatId] = i;
+//     });
 // }
 
 
@@ -22,7 +28,7 @@ class Heats {
         Object.keys(json).forEach(key => {
             this.heats.push(new Heat(json[key]));
         });
-        Object.keys(this.#heats).forEach(i => {
+        Object.keys(this.heats).forEach(i => {
             this.heatsMap[this.heats[i].heatId] = i;
         });
         return this;
