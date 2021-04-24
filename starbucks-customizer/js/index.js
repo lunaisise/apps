@@ -1,4 +1,5 @@
 window.addEventListener('DOMContentLoaded', () => {
+    alert('start');
     fetchGet('./data/drinks.json', json => {
         // console.log(json);
         Object.keys(json).forEach(drinkTypeKey => {
