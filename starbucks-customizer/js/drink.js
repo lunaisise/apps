@@ -318,13 +318,20 @@ window.addEventListener('DOMContentLoaded', () => {
      * 温度情報を取得
      */
     function getHeats() {
-        fetchGet('/apps/starbucks-customizer/data/heats.json', json => {
-            heats.setHeats(json);
-            alert('getHeats Success');
-            getSizes();
-        }, error => {
-            alert('getHeats');
-        });
+        fetch('/apps/starbucks-customizer/data/heats.json')
+            .then(response => {
+                if (response.ok) {
+                    alert('heat ok');
+                    return response.json();
+                }
+                throw response.status;
+            }).then(json => {
+                heats.setHeats(json);
+                alert('getHeats Success');
+                getSizes();
+            }).catch(error => {
+                alert(error);
+            });
     }
     getHeats();
 
