@@ -1,5 +1,5 @@
 window.addEventListener('DOMContentLoaded', () => {
-    alert('start drink');
+    alert('start drink 16');
     const customRadioSelector = '[type="radio"][data-type][data-custom]';
     alert('nya- 1');
 
