@@ -398,6 +398,7 @@ window.addEventListener('DOMContentLoaded', () => {
             text: `${drinkName}のマイカスタム\n${shareText}`,
             url: location.href
         };
+        alert(location.href);
         shareApi(shareData);
     });
 });
