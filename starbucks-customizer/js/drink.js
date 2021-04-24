@@ -1,4 +1,4 @@
-window.addEventListener('DOMContentLoaded', () => {
+
     alert('start');
     const customRadioSelector = '[type="radio"][data-type][data-custom]';
 
@@ -422,4 +422,3 @@ window.addEventListener('DOMContentLoaded', () => {
         alert(location.href);
         shareApi(shareData);
     });
-});
