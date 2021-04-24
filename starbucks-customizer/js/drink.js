@@ -1,10 +1,12 @@
 window.addEventListener('DOMContentLoaded', () => {
     alert('start drink');
     const customRadioSelector = '[type="radio"][data-type][data-custom]';
+    alert('nya- 1');
 
     const heats = new Heats();
     const sizes = new Sizes();
     const customTypes = new CustomTypes();
+    alert('nya- 2');
 
     let shareTexts = [];
 
