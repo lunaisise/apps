@@ -45,6 +45,10 @@ body {
     margin: 0;
 }
 
+[type="button"] {
+    cursor: pointer;
+}
+
 header {
     background-image: $glass-background;
     backdrop-filter: blur(.25rem);
