@@ -1,4 +1,4 @@
-
+window.addEventListener('DOMContentLoaded', () => {
     alert('start');
     const customRadioSelector = '[type="radio"][data-type][data-custom]';
 
@@ -394,7 +394,7 @@
     /**
      * Orderボタンクリック
      */
-    document.querySelector('#order-button').addEventListener('click', e => {
+    document.querySelector('#order-button').addEventListener(clickEventName, e => {
         // e.preventDefault();
             alert('#order-button Success');
         changeOrderCustomButton('order', 'custom');
@@ -403,7 +403,7 @@
     /**
      * Customボタンクリック
      */
-    document.querySelector('#custom-button').addEventListener('click', e => {
+    document.querySelector('#custom-button').addEventListener(clickEventName, e => {
         // e.preventDefault();
             alert('#custom-button Success');
         changeOrderCustomButton('custom', 'order');
@@ -412,7 +412,7 @@
     /**
      * Shareボタンクリック
      */
-    document.querySelector('#share-button').addEventListener('click', () => {
+    document.querySelector('#share-button').addEventListener(clickEventName, () => {
         const shareText = shareTexts.join(' ');
         const shareData = {
             title: `${drinkName} | Starbucks Customizer | lunaisise Apps`,
@@ -422,3 +422,4 @@
         alert(location.href);
         shareApi(shareData);
     });
+});
