@@ -273,6 +273,8 @@ window.addEventListener('DOMContentLoaded', () => {
                 customTypes.setDrinkHasCustoms(json[`${drinkId}`]);
             }
             adaptUserSelection();
+        }, error => {
+            alert('getDrinkHasCustoms');
         });
     }
 
@@ -283,6 +285,8 @@ window.addEventListener('DOMContentLoaded', () => {
         fetchGet('../data/custom_types.json', json => {
             customTypes.setCustomTypes(json);
             getDrinkHasCustoms();
+        }, error => {
+            alert('getCustomFriends');
         });
     }
 
@@ -293,6 +297,8 @@ window.addEventListener('DOMContentLoaded', () => {
         fetchGet('../data/sizes.json', json => {
             sizes.setSizes(json);
             getCustomFriends();
+        }, error => {
+            alert('getSizes');
         });
     }
 
@@ -303,6 +309,8 @@ window.addEventListener('DOMContentLoaded', () => {
         fetchGet('../data/heats.json', json => {
             heats.setHeats(json);
             getSizes();
+        }, error => {
+            alert('getHeats');
         });
     }
     getHeats();
