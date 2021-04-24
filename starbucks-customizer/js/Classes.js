@@ -1,3 +1,14 @@
+// const heats;
+// function setHeats(json) {
+
+// }
+
+
+
+
+
+
+
 class Heats {
     // #heats = [];
 
@@ -5,7 +16,7 @@ class Heats {
 
     setHeats(json) {
         // console.log(json);
-        this.hears = [];
+        this.heats = [];
         this.heatsMap = {};
 
         Object.keys(json).forEach(key => {
