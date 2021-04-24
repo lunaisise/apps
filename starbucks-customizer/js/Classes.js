@@ -1,58 +1,67 @@
 class Heats {
-    #heats = [];
+    // #heats = [];
 
-    #heatsMap = {};
+    // #heatsMap = {};
 
     setHeats(json) {
         // console.log(json);
+        this.hears = [];
+        this.heatsMap = {};
+
         Object.keys(json).forEach(key => {
-            this.#heats.push(new Heat(json[key]));
+            this.heats.push(new Heat(json[key]));
         });
         Object.keys(this.#heats).forEach(i => {
-            this.#heatsMap[this.#heats[i].heatId] = i;
+            this.heatsMap[this.heats[i].heatId] = i;
         });
         return this;
     }
 
     getHeat(heatId) {
-        return this.#heats[this.#heatsMap[`${heatId}`]];
+        return this.heats[this.heatsMap[`${heatId}`]];
     }
 }
 
 class Heat {
-    #heatId;
-    #heatName;
-    #heatNameJa;
-    #hasCustomTypeIds = [];
-    #hasNotCustomTypeIds = [];
+    // #heatId;
+    // #heatName;
+    // #heatNameJa;
+    // #hasCustomTypeIds = [];
+    // #hasNotCustomTypeIds = [];
 
     constructor(heat) {
-        this.#heatId = heat['heat_id'];
-        this.#heatName = heat['heat_name'];
-        this.#heatNameJa = heat['heat_name_ja'];
-        this.#hasCustomTypeIds = heat['has_custom_type_ids'];
-        this.#hasNotCustomTypeIds = heat['has_not_custom_type_ids'];
+        this.heatId;
+        this.heatName;
+        this.heatNameJa;
+        this.hasCustomTypeIds = [];
+        this.hasNotCustomTypeIds = [];
+
+        this.heatId = heat['heat_id'];
+        this.heatName = heat['heat_name'];
+        this.heatNameJa = heat['heat_name_ja'];
+        this.hasCustomTypeIds = heat['has_custom_type_ids'];
+        this.hasNotCustomTypeIds = heat['has_not_custom_type_ids'];
         return this;
     }
 
     get heatId() {
-        return this.#heatId;
+        return this.heatId;
     }
 
     get heatName() {
-        return this.#heatName;
+        return this.heatName;
     }
 
     get heatNameJa() {
-        return this.#heatNameJa;
+        return this.heatNameJa;
     }
 
     get hasCustomTypeIds() {
-        return this.#hasCustomTypeIds;
+        return this.hasCustomTypeIds;
     }
 
     get hasNotCustomTypeIds() {
-        return this.#hasNotCustomTypeIds;
+        return this.hasNotCustomTypeIds;
     }
 }
 

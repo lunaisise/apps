@@ -4,9 +4,10 @@ window.addEventListener('DOMContentLoaded', () => {
     alert('nya- 1');
 
     const heats = new Heats();
+    alert('nya- 2');
     const sizes = new Sizes();
     const customTypes = new CustomTypes();
-    alert('nya- 2');
+    alert('nya- 3');
 
     let shareTexts = [];
 
