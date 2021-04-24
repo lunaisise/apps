@@ -1,4 +1,5 @@
 window.addEventListener('DOMContentLoaded', () => {
+    alert('start');
     const customRadioSelector = '[type="radio"][data-type][data-custom]';
 
     const heats = new Heats();
