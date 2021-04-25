@@ -1,6 +1,4 @@
-alert('start common');
 const dnone = 'dnone';
-const clickEventName = 'ontouchstart' in window ? 'touchstart' : 'click';
 
 const GetParams = (() => {
     const searchText = location.search.substring(1);

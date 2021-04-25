@@ -1,161 +1,125 @@
-// const heats = [];
-// const heatsMap = {};
-// function setHeats(json) {
-//     Object.keys(json).forEach(key => {
-//         heats.push(new Heat(json[key]));
-//     });
-//     Object.keys(this.heats).forEach(i => {
-//         heatsMap[this.heats[i].heatId] = i;
-//     });
-// }
+function Heats() {
+    const heats = [];
+    const heatsMap = {};
 
-
-
-
-
-
-
-class Heats {
-    // #heats = [];
-
-    // #heatsMap = {};
-
-    setHeats(json) {
-        // console.log(json);
-        this.heats = [];
-        this.heatsMap = {};
-
+    this.setHeats = json => {
         Object.keys(json).forEach(key => {
-            this.heats.push(new Heat(json[key]));
+            heats.push(new Heat(json[key]));
         });
-        Object.keys(this.heats).forEach(i => {
-            this.heatsMap[this.heats[i].heatId] = i;
+        Object.keys(heats).forEach(i => {
+            heatsMap[heats[i].heatId] = i;
         });
-        return this;
     }
 
-    getHeat(heatId) {
-        return this.heats[this.heatsMap[`${heatId}`]];
+    this.getHeat = heatId => {
+        return heats[heatsMap[`${heatId}`]];
     }
 }
 
-class Heat {
-    // #heatId;
-    // #heatName;
-    // #heatNameJa;
-    // #hasCustomTypeIds = [];
-    // #hasNotCustomTypeIds = [];
+function Heat(heat) {
+    const heatId = heat['heat_id'];
+    const heatName = heat['heat_name'];
+    const heatNameJa = heat['heat_name_ja'];
+    const hasCustomTypeIds = heat['has_custom_type_ids'];
+    const hasNotCustomTypeIds = heat['has_not_custom_type_ids'];
 
-    constructor(heat) {
-        this.heatId;
-        this.heatName;
-        this.heatNameJa;
-        this.hasCustomTypeIds = [];
-        this.hasNotCustomTypeIds = [];
+    Object.defineProperty(this, 'heatId', {
+        get: () => {
+            return heatId;
+        }
+    });
 
-        this.heatId = heat['heat_id'];
-        this.heatName = heat['heat_name'];
-        this.heatNameJa = heat['heat_name_ja'];
-        this.hasCustomTypeIds = heat['has_custom_type_ids'];
-        this.hasNotCustomTypeIds = heat['has_not_custom_type_ids'];
-        return this;
-    }
+    Object.defineProperty(this, 'heatName', {
+        get: () => {
+            return heatName;
+        }
+    });
 
-    get heatId() {
-        return this.heatId;
-    }
+    Object.defineProperty(this, 'heatNameJa', {
+        get: () => {
+            return heatNameJa;
+        }
+    });
 
-    get heatName() {
-        return this.heatName;
-    }
+    Object.defineProperty(this, 'hasCustomTypeIds', {
+        get: () => {
+            return hasCustomTypeIds;
+        }
+    });
 
-    get heatNameJa() {
-        return this.heatNameJa;
-    }
-
-    get hasCustomTypeIds() {
-        return this.hasCustomTypeIds;
-    }
-
-    get hasNotCustomTypeIds() {
-        return this.hasNotCustomTypeIds;
-    }
+    Object.defineProperty(this, 'hasNotCustomTypeIds', {
+        get: () => {
+            return hasNotCustomTypeIds;
+        }
+    });
 }
 
-class Sizes {
-    #sizes = [];
+function Sizes() {
+    const sizes = [];
+    const sizesMap = {};
 
-    #sizesMap = {};
-
-    setSizes(json) {
-        // console.log(json);
+    this.setSizes = json => {
         Object.keys(json).forEach(key => {
-            this.#sizes.push(new Size(json[key]));
+            sizes.push(new Size(json[key]));
         });
-        Object.keys(this.#sizes).forEach(i => {
-            this.#sizesMap[this.#sizes[i].sizeId] = i;
+        Object.keys(sizes).forEach(i => {
+            sizesMap[sizes[i].sizeId] = i;
         });
-        return this;
     }
 
-    getSize(sizeId) {
-        return this.#sizes[this.#sizesMap[`${sizeId}`]];
+    this.getSize = sizeId => {
+        return sizes[sizesMap[`${sizeId}`]];
     }
 }
 
-class Size {
-    #sizeId;
-    #sizeName;
-    #sizeNameJa;
+function Size(size) {
+    const sizeId = size['size_id'];
+    const sizeName = size['size_name'];
+    const sizeNameJa = size['size_name_ja'];
 
-    constructor(size) {
-        // console.log(size);
-        this.#sizeId = size['size_id'];
-        this.#sizeName = size['size_name'];
-        this.#sizeNameJa = size['size_name_ja'];
-        return this;
-    }
+    Object.defineProperty(this, 'sizeId', {
+        get: () => {
+            return sizeId;
+        }
+    });
 
-    get sizeId() {
-        return this.#sizeId;
-    }
+    Object.defineProperty(this, 'sizeName', {
+        get: () => {
+            return sizeName;
+        }
+    });
 
-    get sizeName() {
-        return this.#sizeName;
-    }
-
-    get sizeNameJa() {
-        return this.#sizeNameJa;
-    }
+    Object.defineProperty(this, 'sizeNameJa', {
+        get: () => {
+            return sizeNameJa;
+        }
+    });
 }
 
-class CustomTypes {
-    #customTypes = [];
-    #discords = [];
+function CustomTypes() {
+    const customTypes = [];
+    const customTypesMap = {};
+    let discords = {};
 
-    #customTypesMap = {};
-
-    setCustomTypes(json) {
-        // console.log(json);
+    this.setCustomTypes = json => {
         Object.keys(json).forEach(key => {
-            this.#customTypes.push(new CustomType(json[key]));
+            customTypes.push(new CustomType(json[key]));
         });
-        const discords = [];
-        Object.keys(this.#customTypes).forEach(i => {
-            this.#customTypesMap[this.#customTypes[i].customTypeId] = i;
-            this.#customTypes[i].customs.forEach(custom => {
+        const discordsTmp = [];
+        Object.keys(customTypes).forEach(i => {
+            customTypesMap[customTypes[i].customTypeId] = i;
+            customTypes[i].customs.forEach(custom => {
                 custom.discords.forEach(discordId => {
-                    discords.push(discordId);
+                    discordsTmp.push(discordId);
                 });
             });
         });
-        this.#discords = discords.filter((x, i, self) => {
+        discords = discordsTmp.filter((x, i, self) => {
             return self.indexOf(x) === i;
         });
-        return this;
     }
 
-    setDrinkHasCustoms(drinkHasCustom) {
+    this.setDrinkHasCustoms = drinkHasCustom => {
         Object.keys(drinkHasCustom).forEach(customCombinationId => {
             const combination = this.getCombination(drinkHasCustom[customCombinationId]['custom_combination_id']);
             const custom = this.getCustomType(combination.customTypeId).getCustom(combination.customId);
@@ -163,13 +127,13 @@ class CustomTypes {
         });
     }
 
-    getCustomType(customTypeId) {
-        return this.#customTypes[this.#customTypesMap[`${customTypeId}`]];
+    this.getCustomType = customTypeId => {
+        return customTypes[customTypesMap[`${customTypeId}`]];
     }
 
-    getCombination(customCombinationId) {
-        for (let i in this.#customTypes) {
-            const customType = this.#customTypes[i];
+    this.getCombination = customCombinationId => {
+        for (let i in this.customTypes) {
+            const customType = customTypes[i];
             for (let j in customType['customs']) {
                 const custom = customType['customs'][j];
                 if (`${custom.customCombinationId}` === `${customCombinationId}`) {
@@ -182,157 +146,169 @@ class CustomTypes {
         }
     }
 
-    get customTypes() {
-        return this.#customTypes;
-    }
+    Object.defineProperty(this, 'customTypes', {
+        get: () => {
+            return customTypes;
+        }
+    });
 
-    get discords() {
-        return this.#discords;
-    }
+    Object.defineProperty(this, 'discords', {
+        get: () => {
+            return discords;
+        }
+    });
 }
 
-class CustomType {
-    #customTypeId;
-    #customTypeKey;
-    #customTypeName;
-    #customTypeSpel;
-    #customs = [];
+function CustomType(customType) {
+    const customTypeId = customType['custom_type_id'];
+    const customTypeKey = customType['custom_type_key'];
+    const customTypeName = customType['custom_type_name'];
+    const customTypeSpel = customType['custom_type_spel'];
 
-    #defaultCustomNum = -1;
+    const customs = [];
+    const customsMap = {};
+    const customCombinationMap = {};
+    let defaultCustomNum = -1;
 
-    #customsMap = {};
-    #customCombinationMap = {};
+    Object.keys(customType['customs']).forEach(key => {
+        customs.push(new Custom(customType['customs'][key]));
+    });
+    Object.keys(customs).forEach(i => {
+        const custom = customs[i];
+        customsMap[custom.customId] = i;
+        customCombinationMap[custom.customCombinationId] = i;
+        if (custom.isDefault) {
+            defaultCustomNum = i;
+        }
+    });
 
-    constructor(customType) {
-        // console.log(customType);
-        this.#customTypeId = customType['custom_type_id'];
-        this.#customTypeKey = customType['custom_type_key'];
-        this.#customTypeName = customType['custom_type_name'];
-        this.#customTypeSpel = customType['custom_type_spel'];
-        Object.keys(customType['customs']).forEach(key => {
-            this.#customs.push(new Custom(customType['customs'][key]));
-        });
-        Object.keys(this.#customs).forEach(i => {
-            const custom = this.#customs[i];
-            this.#customsMap[custom.customId] = i;
-            this.#customCombinationMap[custom.customCombinationId] = i;
-            if (custom.isDefault) {
-                this.#defaultCustomNum = i;
-            }
-        });
-        return this;
+    this.getCustom = customId => {
+        return customs[customsMap[`${customId}`]];
     }
 
-    getCustom(customId) {
-        return this.#customs[this.#customsMap[`${customId}`]];
+    this.getCombination = customCombinationId => {
+        return customs[customCombinationMap[`${customCombinationId}`]];
     }
 
-    getCombination(customCombinationId) {
-        return this.#customs[this.#customCombinationMap[`${customCombinationId}`]];
-    }
-
-    getDetaultCustom() {
-        if (this.#defaultCustomNum === -1) {
+    this.getDetaultCustom = () => {
+        if (defaultCustomNum === -1) {
             return null;
         }
-        return this.#customs[this.#defaultCustomNum];
+        return customs[defaultCustomNum];
     }
 
-    get customTypeId() {
-        return this.#customTypeId;
-    }
+    Object.defineProperty(this, 'customTypeId', {
+        get: () => {
+            return customTypeId;
+        }
+    });
 
-    get customTypeKey() {
-        return this.#customTypeKey;
-    }
+    Object.defineProperty(this, 'customTypeKey', {
+        get: () => {
+            return customTypeKey;
+        }
+    });
 
-    get customTypeName() {
-        return this.#customTypeName;
-    }
+    Object.defineProperty(this, 'customTypeName', {
+        get: () => {
+            return customTypeName;
+        }
+    });
 
-    get customTypeSpel() {
-        return this.#customTypeSpel;
-    }
+    Object.defineProperty(this, 'customTypeSpel', {
+        get: () => {
+            return customTypeSpel;
+        }
+    });
 
-    get customs() {
-        return this.#customs;
-    }
+    Object.defineProperty(this, 'customs', {
+        get: () => {
+            return customs;
+        }
+    });
 }
 
-class Custom {
-    #customId;
-    #customCombinationId;
-    #customKey;
-    #customName;
-    #customSpel;
-    #isDefault;
-    #price;
-    #friends;
-    #discords;
+function Custom(custom) {
+    const customId = custom['custom_id'];
+    const customCombinationId = custom['custom_combination_id'];
+    const customKey = custom['custom_key'];
+    const customName = custom['custom_name'];
+    const customSpel = custom['custom_spel'];
+    const isDefault = custom['is_default'];
+    const price = custom['price'];
+    const friends = custom['friends'];
+    const discords = custom['discords'];
+    let isChange = false;
+    let isFree = false;
 
-    #isChange = false;
-    #isFree = false;
-
-    constructor(custom) {
-        // console.log(custom);
-        this.#customId = custom['custom_id'];
-        this.#customCombinationId = custom['custom_combination_id'];
-        this.#customKey = custom['custom_key'];
-        this.#customName = custom['custom_name'];
-        this.#customSpel = custom['custom_spel'];
-        this.#isDefault = custom['is_default'];
-        this.#price = custom['price'];
-        this.#friends = custom['friends'];
-        this.#discords = custom['discords'];
-        return this;
+    this.setDrinkHasCustoms = drinkHasCustom => {
+        isChange = drinkHasCustom['is_change'];
+        isFree = drinkHasCustom['is_free'];
     }
 
-    setDrinkHasCustoms(drinkHasCustom) {
-        this.#isChange = drinkHasCustom['is_change'];
-        this.#isFree = drinkHasCustom['is_free'];
-    }
+    Object.defineProperty(this, 'customId', {
+        get: () => {
+            return customId;
+        }
+    });
 
-    get customId() {
-        return this.#customId;
-    }
+    Object.defineProperty(this, 'customCombinationId', {
+        get: () => {
+            return customCombinationId;
+        }
+    });
 
-    get customCombinationId() {
-        return this.#customCombinationId;
-    }
+    Object.defineProperty(this, 'customKey', {
+        get: () => {
+            return customKey;
+        }
+    });
 
-    get customKey() {
-        return this.#customKey;
-    }
+    Object.defineProperty(this, 'customName', {
+        get: () => {
+            return customName;
+        }
+    });
 
-    get customName() {
-        return this.#customName;
-    }
+    Object.defineProperty(this, 'customSpel', {
+        get: () => {
+            return customSpel;
+        }
+    });
 
-    get customSpel() {
-        return this.#customSpel;
-    }
+    Object.defineProperty(this, 'isDefault', {
+        get: () => {
+            return isDefault;
+        }
+    });
 
-    get isDefault() {
-        return this.#isDefault;
-    }
+    Object.defineProperty(this, 'price', {
+        get: () => {
+            return price;
+        }
+    });
 
-    get price() {
-        return this.#price;
-    }
+    Object.defineProperty(this, 'friends', {
+        get: () => {
+            return friends;
+        }
+    });
 
-    get friends() {
-        return this.#friends;
-    }
+    Object.defineProperty(this, 'discords', {
+        get: () => {
+            return discords;
+        }
+    });
 
-    get discords() {
-        return this.#discords;
-    }
+    Object.defineProperty(this, 'isChange', {
+        get: () => {
+            return isChange;
+        }
+    });
 
-    get isChange() {
-        return this.#isChange;
-    }
-
-    get isFree() {
-        return this.#isFree;
-    }
+    Object.defineProperty(this, 'isFree', {
+        get: () => {
+            return isFree;
+        }
+    });
 }

@@ -1,13 +1,9 @@
 window.addEventListener('DOMContentLoaded', () => {
-    alert('start drink 16');
     const customRadioSelector = '[type="radio"][data-type][data-custom]';
-    alert('nya- 1');
 
     const heats = new Heats();
-    alert('nya- 2');
     const sizes = new Sizes();
     const customTypes = new CustomTypes();
-    alert('nya- 3');
 
     let shareTexts = [];
 
@@ -45,7 +41,6 @@ window.addEventListener('DOMContentLoaded', () => {
                 document.querySelector(liSelector).classList.remove(dnone);
             }
         });
-        alert('heatChangeCustoms Success');
     }
 
     /**
@@ -88,7 +83,6 @@ window.addEventListener('DOMContentLoaded', () => {
                 document.querySelector(radioSelector)['checked'] = true;
             }
         });
-        alert('customChangeFriends Success');
     }
 
     /**
@@ -116,7 +110,6 @@ window.addEventListener('DOMContentLoaded', () => {
             const custom = customTypes.getCustomType(customTypeId).getCustom(customId);
             document.querySelector(`li[data-type="${customTypeId}"] .my-custom`).textContent = createCustomText(custom);
         });
-        alert('customChangeLabel Success');
     }
 
     /**
@@ -147,9 +140,8 @@ window.addEventListener('DOMContentLoaded', () => {
         }
         const param = params.join('&');
         const url = `${location.origin}${location.pathname}?${param}`;
-        // console.log(url);
+        console.log(url);
         history.replaceState(null, '', url);
-        alert('customChangeUrl Success');
     }
 
     /**
@@ -190,7 +182,6 @@ window.addEventListener('DOMContentLoaded', () => {
             li.textContent = 'なし';
             document.querySelector('#custom-customs > ul').appendChild(li);
         }
-        alert('setOrderSheet Success');
     }
 
     /**
@@ -211,7 +202,6 @@ window.addEventListener('DOMContentLoaded', () => {
             }
             shareTexts.push(custom.customSpel + customType.customTypeSpel);
         });
-        alert('setShareTexts Success');
     }
 
     /**
@@ -224,7 +214,6 @@ window.addEventListener('DOMContentLoaded', () => {
         customChangeUrl();
         setOrderSheet();
         setShareTexts();
-        alert('checkCustom Success');
     }
 
     /**
@@ -272,7 +261,6 @@ window.addEventListener('DOMContentLoaded', () => {
                 }
             });
         }
-        alert('adaptUserSelection Success');
         checkCustom();
     }
 
@@ -280,14 +268,11 @@ window.addEventListener('DOMContentLoaded', () => {
      * ドリンク-カスタム情報を取得
      */
     function getDrinkHasCustoms() {
-        fetchGet('/apps/starbucks-customizer/data/drink_has_customs.json', json => {
+        fetchGet('../data/drink_has_customs.json', json => {
             if (Object.keys(json).includes(`${drinkId}`)) {
                 customTypes.setDrinkHasCustoms(json[`${drinkId}`]);
             }
-            alert('getDrinkHasCustoms Success');
             adaptUserSelection();
-        }, error => {
-            alert('getDrinkHasCustoms');
         });
     }
 
@@ -295,12 +280,9 @@ window.addEventListener('DOMContentLoaded', () => {
      * カスタム情報を取得
      */
     function getCustomFriends() {
-        fetchGet('/apps/starbucks-customizer/data/custom_types.json', json => {
+        fetchGet('../data/custom_types.json', json => {
             customTypes.setCustomTypes(json);
-            alert('getCustomFriends Success');
             getDrinkHasCustoms();
-        }, error => {
-            alert('getCustomFriends');
         });
     }
 
@@ -308,12 +290,9 @@ window.addEventListener('DOMContentLoaded', () => {
      * サイズ情報を取得
      */
     function getSizes() {
-        fetchGet('/apps/starbucks-customizer/data/sizes.json', json => {
+        fetchGet('../data/sizes.json', json => {
             sizes.setSizes(json);
-            alert('getSizes Success');
             getCustomFriends();
-        }, error => {
-            alert('getSizes');
         });
     }
 
@@ -321,24 +300,12 @@ window.addEventListener('DOMContentLoaded', () => {
      * 温度情報を取得
      */
     function getHeats() {
-        fetch('/apps/starbucks-customizer/data/heats.json')
-            .then(response => {
-                if (response.ok) {
-                    alert('heat ok');
-                    return response.json();
-                }
-                throw response.status;
-            }).then(json => {
-                heats.setHeats(json);
-                alert('getHeats Success');
-                getSizes();
-            }).catch(error => {
-                alert(error);
-            });
+        fetchGet('../data/heats.json', json => {
+            heats.setHeats(json);
+            getSizes();
+        });
     }
-    alert('before getHeats');
     getHeats();
-    alert('after getHeats');
 
     /**
      * OrderとCustomを切り替え
@@ -351,7 +318,6 @@ window.addEventListener('DOMContentLoaded', () => {
         document.querySelector(`#${enableType}`).classList.remove(dnone);
         document.querySelector(`#${disableType}-button`).closest('li').classList.remove(dnone);
         window.scroll(0, 0);
-        alert('changeOrderCustomButton Success');
     }
 
     /**
@@ -359,7 +325,6 @@ window.addEventListener('DOMContentLoaded', () => {
      */
     document.querySelector('#history-back').addEventListener('click', e => {
         e.preventDefault();
-        alert('#history-back Success');
         history.back();
     });
 
@@ -368,7 +333,6 @@ window.addEventListener('DOMContentLoaded', () => {
      */
     document.querySelectorAll('[name="heats"]').forEach(radio => {
         radio.addEventListener('change', e => {
-            alert('[name="heats"] Success');
             checkCustom();
         });
     });
@@ -378,7 +342,6 @@ window.addEventListener('DOMContentLoaded', () => {
      */
     document.querySelectorAll('[name="sizes"]').forEach(radio => {
         radio.addEventListener('change', e => {
-            alert('[name="sizes"] Success');
             checkCustom();
         });
     });
@@ -388,7 +351,6 @@ window.addEventListener('DOMContentLoaded', () => {
      */
     document.querySelectorAll(customRadioSelector).forEach(radio => {
         radio.addEventListener('change', e => {
-            alert(customRadioSelector + ' Success');
             checkCustom();
         });
     });
@@ -398,7 +360,6 @@ window.addEventListener('DOMContentLoaded', () => {
      */
     document.querySelectorAll('#condiment-bar [type="checkbox"]').forEach(checkbox => {
         checkbox.addEventListener('change', e => {
-            alert('#condiment-bar [type="checkbox"] Success');
             checkCustom();
         });
     });
@@ -406,32 +367,29 @@ window.addEventListener('DOMContentLoaded', () => {
     /**
      * Orderボタンクリック
      */
-    document.querySelector('#order-button').addEventListener(clickEventName, e => {
-        // e.preventDefault();
-            alert('#order-button Success');
+    document.querySelector('#order-button').addEventListener('click', e => {
+        e.preventDefault();
         changeOrderCustomButton('order', 'custom');
     });
 
     /**
      * Customボタンクリック
      */
-    document.querySelector('#custom-button').addEventListener(clickEventName, e => {
-        // e.preventDefault();
-            alert('#custom-button Success');
+    document.querySelector('#custom-button').addEventListener('click', e => {
+        e.preventDefault();
         changeOrderCustomButton('custom', 'order');
     });
 
     /**
      * Shareボタンクリック
      */
-    document.querySelector('#share-button').addEventListener(clickEventName, () => {
+    document.querySelector('#share-button').addEventListener('click', () => {
         const shareText = shareTexts.join(' ');
         const shareData = {
             title: `${drinkName} | Starbucks Customizer | lunaisise Apps`,
             text: `${drinkName}のマイカスタム\n${shareText}`,
             url: location.href
         };
-        alert(location.href);
         shareApi(shareData);
     });
 });
