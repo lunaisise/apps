@@ -323,10 +323,10 @@ window.addEventListener('DOMContentLoaded', () => {
     /**
      * 戻るボタンクリック
      */
-    document.querySelector('#history-back').addEventListener('click', e => {
-        e.preventDefault();
-        history.back();
-    });
+    // document.querySelector('#history-back').addEventListener('click', e => {
+    //     e.preventDefault();
+    //     history.back();
+    // });
 
     /**
      * 温度切り替え
