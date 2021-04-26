@@ -123,6 +123,7 @@ h4 {
 }
 #custom #customs [type=checkbox] ~ ul > li {
   height: 2rem;
+  padding-left: 1rem;
   -webkit-transition: 0.35s;
   transition: 0.35s;
 }
