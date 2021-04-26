@@ -34,8 +34,13 @@ window.addEventListener('DOMContentLoaded', () => {
                     });
                 }
                 li.querySelector('a').href = `./drinks/${drink['drink_id']}.html`;
+                li.querySelector('a').addEventListener('click', e => {
+                    sessionStorage.setItem('starbucksCustomizerIndexScroll', window.pageYOffset);
+                });
                 document.querySelector(`#${drinkTypeKey} > ul`).appendChild(li);
             });
+
+            window.scrollTo(0, sessionStorage.getItem('starbucksCustomizerIndexScroll') ?? 0);
         });
     });
 

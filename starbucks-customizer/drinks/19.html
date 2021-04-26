@@ -93,7 +93,7 @@
     <input type="radio" name="hot" id="hot-default" data-type="3" data-custom="6" checked>
     <label for="hot-default">
     <i class="mi"></i>
-    <span>標準</span>
+    <span>変更なし</span>
     </label>
 </li><li data-custom="5">
     <input type="radio" name="hot" id="hot-light-hot" data-type="3" data-custom="5">
@@ -114,7 +114,7 @@
     <input type="radio" name="ice" id="ice-default" data-type="1" data-custom="6" checked>
     <label for="ice-default">
     <i class="mi"></i>
-    <span>標準</span>
+    <span>変更なし</span>
     </label>
 </li><li data-custom="1">
     <input type="radio" name="ice" id="ice-light" data-type="1" data-custom="1">
@@ -137,17 +137,116 @@
     <span class="my-custom"></span>
   </label>
   <ul class="customs">
-    <li data-custom="6">
-    <input type="radio" name="milk" id="milk-default" data-type="2" data-custom="6" checked>
-    <label for="milk-default">
-    <i class="mi"></i>
-    <span>標準</span>
-    </label>
-</li><li data-custom="3">
+    <li data-custom="3">
     <input type="radio" name="milk" id="milk-extra" data-type="2" data-custom="3">
     <label for="milk-extra">
     <i class="mi"></i>
     <span>多め</span>
+    </label>
+</li><li data-custom="6">
+    <input type="radio" name="milk" id="milk-default" data-type="2" data-custom="6" checked>
+    <label for="milk-default">
+    <i class="mi"></i>
+    <span>変更なし</span>
+    </label>
+</li>
+  </ul>
+</li><li data-type="19">
+  <input type="checkbox" id="ct-milk_type">
+  <label for="ct-milk_type">
+    <span class="mi custom-name">ミルクの種類</span>
+    <span class="my-custom"></span>
+  </label>
+  <ul class="customs">
+    <li data-custom="6">
+    <input type="radio" name="milk_type" id="milk_type-default" data-type="19" data-custom="6" checked>
+    <label for="milk_type-default">
+    <i class="mi"></i>
+    <span>変更なし</span>
+    </label>
+</li><li data-custom="10">
+    <input type="radio" name="milk_type" id="milk_type-two-percent" data-type="19" data-custom="10">
+    <label for="milk_type-two-percent">
+    <i class="mi"></i>
+    <span>低脂肪タイプ</span>
+    </label>
+</li><li data-custom="9">
+    <input type="radio" name="milk_type" id="milk_type-non-fat" data-type="19" data-custom="9">
+    <label for="milk_type-non-fat">
+    <i class="mi"></i>
+    <span>無脂肪乳</span>
+    </label>
+</li><li data-custom="11">
+    <input type="radio" name="milk_type" id="milk_type-soy-milk" data-type="19" data-custom="11">
+    <label for="milk_type-soy-milk">
+    <i class="mi"></i>
+    <span>豆乳</span>
+    </label>
+</li><li data-custom="12">
+    <input type="radio" name="milk_type" id="milk_type-almond-milk" data-type="19" data-custom="12">
+    <label for="milk_type-almond-milk">
+    <i class="mi"></i>
+    <span>アーモンドミルク</span>
+    </label>
+</li><li data-custom="13">
+    <input type="radio" name="milk_type" id="milk_type-breve-milk" data-type="19" data-custom="13">
+    <label for="milk_type-breve-milk">
+    <i class="mi"></i>
+    <span>ブレべミルク</span>
+    </label>
+</li>
+  </ul>
+</li><li data-type="7">
+  <input type="checkbox" id="ct-foam_milk">
+  <label for="ct-foam_milk">
+    <span class="mi custom-name">フォームミルク</span>
+    <span class="my-custom"></span>
+  </label>
+  <ul class="customs">
+    <li data-custom="3">
+    <input type="radio" name="foam_milk" id="foam_milk-extra" data-type="7" data-custom="3">
+    <label for="foam_milk-extra">
+    <i class="mi"></i>
+    <span>多め</span>
+    </label>
+</li><li data-custom="6">
+    <input type="radio" name="foam_milk" id="foam_milk-default" data-type="7" data-custom="6" checked>
+    <label for="foam_milk-default">
+    <i class="mi"></i>
+    <span>変更なし</span>
+    </label>
+</li><li data-custom="1">
+    <input type="radio" name="foam_milk" id="foam_milk-light" data-type="7" data-custom="1">
+    <label for="foam_milk-light">
+    <i class="mi"></i>
+    <span>少なめ</span>
+    </label>
+</li><li data-custom="2">
+    <input type="radio" name="foam_milk" id="foam_milk-none" data-type="7" data-custom="2">
+    <label for="foam_milk-none">
+    <i class="mi"></i>
+    <span>なし</span>
+    </label>
+</li>
+  </ul>
+</li><li data-type="4">
+  <input type="checkbox" id="ct-espresso">
+  <label for="ct-espresso">
+    <span class="mi custom-name">エスプレッソショット</span>
+    <span class="my-custom"></span>
+  </label>
+  <ul class="customs">
+    <li data-custom="4">
+    <input type="radio" name="espresso" id="espresso-add" data-type="4" data-custom="4">
+    <label for="espresso-add">
+    <i class="mi"></i>
+    <span>追加</span>
+    </label>
+</li><li data-custom="15">
+    <input type="radio" name="espresso" id="espresso-non-add" data-type="4" data-custom="15" checked>
+    <label for="espresso-non-add">
+    <i class="mi"></i>
+    <span>追加なし</span>
     </label>
 </li>
   </ul>
@@ -158,17 +257,140 @@
     <span class="my-custom"></span>
   </label>
   <ul class="customs">
-    <li data-custom="6">
-    <input type="radio" name="caramel_sauce" id="caramel_sauce-default" data-type="8" data-custom="6" checked>
-    <label for="caramel_sauce-default">
-    <i class="mi"></i>
-    <span>標準</span>
-    </label>
-</li><li data-custom="3">
+    <li data-custom="3">
     <input type="radio" name="caramel_sauce" id="caramel_sauce-extra" data-type="8" data-custom="3">
     <label for="caramel_sauce-extra">
     <i class="mi"></i>
     <span>多め</span>
+    </label>
+</li><li data-custom="6">
+    <input type="radio" name="caramel_sauce" id="caramel_sauce-default" data-type="8" data-custom="6" checked>
+    <label for="caramel_sauce-default">
+    <i class="mi"></i>
+    <span>変更なし</span>
+    </label>
+</li><li data-custom="1">
+    <input type="radio" name="caramel_sauce" id="caramel_sauce-light" data-type="8" data-custom="1">
+    <label for="caramel_sauce-light">
+    <i class="mi"></i>
+    <span>少なめ</span>
+    </label>
+</li><li data-custom="2">
+    <input type="radio" name="caramel_sauce" id="caramel_sauce-none" data-type="8" data-custom="2">
+    <label for="caramel_sauce-none">
+    <i class="mi"></i>
+    <span>なし</span>
+    </label>
+</li>
+  </ul>
+</li><li data-type="9">
+  <input type="checkbox" id="ct-chocolate_sauce">
+  <label for="ct-chocolate_sauce">
+    <span class="mi custom-name">チョコレートソース</span>
+    <span class="my-custom"></span>
+  </label>
+  <ul class="customs">
+    <li data-custom="16">
+    <input type="radio" name="chocolate_sauce" id="chocolate_sauce-extra-add" data-type="9" data-custom="16">
+    <label for="chocolate_sauce-extra-add">
+    <i class="mi"></i>
+    <span>多めに追加</span>
+    </label>
+</li><li data-custom="4">
+    <input type="radio" name="chocolate_sauce" id="chocolate_sauce-add" data-type="9" data-custom="4">
+    <label for="chocolate_sauce-add">
+    <i class="mi"></i>
+    <span>追加</span>
+    </label>
+</li><li data-custom="15">
+    <input type="radio" name="chocolate_sauce" id="chocolate_sauce-non-add" data-type="9" data-custom="15" checked>
+    <label for="chocolate_sauce-non-add">
+    <i class="mi"></i>
+    <span>追加なし</span>
+    </label>
+</li>
+  </ul>
+</li><li data-type="26">
+  <input type="checkbox" id="ct-sirup">
+  <label for="ct-sirup">
+    <span class="mi custom-name">シロップの量</span>
+    <span class="my-custom"></span>
+  </label>
+  <ul class="customs">
+    <li data-custom="3">
+    <input type="radio" name="sirup" id="sirup-extra" data-type="26" data-custom="3">
+    <label for="sirup-extra">
+    <i class="mi"></i>
+    <span>多め</span>
+    </label>
+</li><li data-custom="6">
+    <input type="radio" name="sirup" id="sirup-default" data-type="26" data-custom="6" checked>
+    <label for="sirup-default">
+    <i class="mi"></i>
+    <span>変更なし</span>
+    </label>
+</li><li data-custom="1">
+    <input type="radio" name="sirup" id="sirup-light" data-type="26" data-custom="1">
+    <label for="sirup-light">
+    <i class="mi"></i>
+    <span>少なめ</span>
+    </label>
+</li><li data-custom="2">
+    <input type="radio" name="sirup" id="sirup-none" data-type="26" data-custom="2">
+    <label for="sirup-none">
+    <i class="mi"></i>
+    <span>なし</span>
+    </label>
+</li>
+  </ul>
+</li><li data-type="27">
+  <input type="checkbox" id="ct-sirup_type">
+  <label for="ct-sirup_type">
+    <span class="mi custom-name">シロップの種類</span>
+    <span class="my-custom"></span>
+  </label>
+  <ul class="customs">
+    <li data-custom="6">
+    <input type="radio" name="sirup_type" id="sirup_type-default" data-type="27" data-custom="6" checked>
+    <label for="sirup_type-default">
+    <i class="mi"></i>
+    <span>変更なし</span>
+    </label>
+</li><li data-custom="18">
+    <input type="radio" name="sirup_type" id="sirup_type-caramel-sirup" data-type="27" data-custom="18">
+    <label for="sirup_type-caramel-sirup">
+    <i class="mi"></i>
+    <span>キャラメルシロップ</span>
+    </label>
+</li><li data-custom="20">
+    <input type="radio" name="sirup_type" id="sirup_type-mocha-sirup" data-type="27" data-custom="20">
+    <label for="sirup_type-mocha-sirup">
+    <i class="mi"></i>
+    <span>モカシロップ</span>
+    </label>
+</li><li data-custom="21">
+    <input type="radio" name="sirup_type" id="sirup_type-white-mocha-sirup" data-type="27" data-custom="21">
+    <label for="sirup_type-white-mocha-sirup">
+    <i class="mi"></i>
+    <span>ホワイトモカシロップ</span>
+    </label>
+</li><li data-custom="22">
+    <input type="radio" name="sirup_type" id="sirup_type-classic-sirup" data-type="27" data-custom="22">
+    <label for="sirup_type-classic-sirup">
+    <i class="mi"></i>
+    <span>クラシックシロップ</span>
+    </label>
+</li><li data-custom="23">
+    <input type="radio" name="sirup_type" id="sirup_type-almond-toffee-sirup" data-type="27" data-custom="23">
+    <label for="sirup_type-almond-toffee-sirup">
+    <i class="mi"></i>
+    <span>アーモンドトフィーシロップ</span>
+    </label>
+</li><li data-custom="25">
+    <input type="radio" name="sirup_type" id="sirup_type-chai-sirup" data-type="27" data-custom="25">
+    <label for="sirup_type-chai-sirup">
+    <i class="mi"></i>
+    <span>チャイシロップ</span>
     </label>
 </li>
   </ul>
@@ -287,7 +509,7 @@
 </template>
 
 <template id="custom-add-template">
-  <li><b class="custom-custom-type-name"></b> を追加</li>
+  <li><b class="custom-custom-type-name"></b> を <b class="custom-custom-name"></b></li>
 </template>
 
 <script>

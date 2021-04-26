@@ -12,7 +12,11 @@ window.addEventListener('DOMContentLoaded', () => {
      * @returns heatId
      */
     function selectedHeatId() {
-        return document.querySelector('[name="heats"]:checked').dataset.heat;
+        const heats = document.querySelector('[name="heats"]:checked');
+        if (heats === null) {
+            return null;
+        }
+        return heats.dataset.heat;
     }
 
     /**
@@ -20,13 +24,20 @@ window.addEventListener('DOMContentLoaded', () => {
      * @returns sizeId
      */
     function selectedSizeId() {
-        return document.querySelector('[name="sizes"]:checked').dataset.size;
+        const sizes = document.querySelector('[name="sizes"]:checked');
+        if (sizes === null) {
+            return null;
+        }
+        return sizes.dataset.size;
     }
 
     /**
      * 温度-カスタムを設定
      */
     function heatChangeCustoms() {
+        if (selectedHeatId() === null) {
+            return;
+        }
         // 不所持カスタムを非表示
         heats.getHeat(selectedHeatId()).hasNotCustomTypeIds.forEach(customTypeId => {
             const liSelector = `li[data-type="${customTypeId}"]`;
@@ -90,14 +101,15 @@ window.addEventListener('DOMContentLoaded', () => {
      * @param {object} custom カスタム
      */
     function createCustomText(custom) {
-        let customName = custom.customName;
+        const customName = custom.customName;
         if (custom.isDefault) {
             return customName;
         }
-        customName = `'${customName}'`;
-        customName += custom.isChange ? ' に変更' : ' を追加';
-        customName += custom.isFree ? ' +￥0' : ` +￥${custom.price}`;
-        return customName;
+        const priceStr = custom.isFree ? ' +￥0' : ` +￥${custom.price}`;
+        if (custom.isChange) {
+            return `${customName} に変更${priceStr}`;
+        }
+        return `${customName}${priceStr}`;
     }
 
     /**
@@ -117,8 +129,12 @@ window.addEventListener('DOMContentLoaded', () => {
      */
     function customChangeUrl() {
         const params = [];
-        params.push(`heat=${selectedHeatId()}`);
-        params.push(`size=${selectedSizeId()}`);
+        if (selectedHeatId() !== null) {
+            params.push(`heat=${selectedHeatId()}`);
+        }
+        if (selectedSizeId() !== null) {
+            params.push(`size=${selectedSizeId()}`);
+        }
         const customParams = {};
         document.querySelectorAll(`#customs > li:not(.${dnone}) ${customRadioSelector}:checked`).forEach(radio => {
             const customTypeId = radio.dataset.type;
@@ -140,7 +156,7 @@ window.addEventListener('DOMContentLoaded', () => {
         }
         const param = params.join('&');
         const url = `${location.origin}${location.pathname}?${param}`;
-        console.log(url);
+        // console.log(url);
         history.replaceState(null, '', url);
     }
 
@@ -149,12 +165,16 @@ window.addEventListener('DOMContentLoaded', () => {
      */
     function setOrderSheet() {
         // 温度
-        const heatNameJa = heats.getHeat(selectedHeatId()).heatNameJa;
-        document.querySelector('#custom-heat > b').textContent = heatNameJa;
+        if (selectedHeatId() !== null) {
+            const heatNameJa = heats.getHeat(selectedHeatId()).heatNameJa;
+            document.querySelector('#custom-heat > b').textContent = heatNameJa;
+        }
 
         // サイズ
-        const sizeNameJa = sizes.getSize(selectedSizeId()).sizeNameJa;
-        document.querySelector('#custom-size > b').textContent = sizeNameJa;
+        if (selectedSizeId() !== null) {
+            const sizeNameJa = sizes.getSize(selectedSizeId()).sizeNameJa;
+            document.querySelector('#custom-size > b').textContent = sizeNameJa;
+        }
 
         // カスタム
         document.querySelector('#custom-customs > ul').textContent = '';
@@ -166,16 +186,11 @@ window.addEventListener('DOMContentLoaded', () => {
             if (custom.isDefault) {
                 return;
             }
-            if (custom.isChange) {
-                const li = createClone('#custom-change-template', 'li');
-                li.querySelector('.custom-custom-type-name').textContent = customType.customTypeName;
-                li.querySelector('.custom-custom-name').textContent = custom.customName;
-                document.querySelector('#custom-customs > ul').appendChild(li);
-            } else {
-                const li = createClone('#custom-add-template', 'li');
-                li.querySelector('.custom-custom-type-name').textContent = customType.customTypeName;
-                document.querySelector('#custom-customs > ul').appendChild(li);
-            }
+            const templateId = custom.isChange ? '#custom-change-template' : '#custom-add-template';
+            const li = createClone(templateId, 'li');
+            li.querySelector('.custom-custom-type-name').textContent = customType.customTypeName;
+            li.querySelector('.custom-custom-name').textContent = custom.customName;
+            document.querySelector('#custom-customs > ul').appendChild(li);
         });
         if (document.querySelector('#custom-customs li') === null) {
             const li = document.createElement('li');
@@ -189,8 +204,12 @@ window.addEventListener('DOMContentLoaded', () => {
      */
     function setShareTexts() {
         shareTexts = [];
-        shareTexts.push(heats.getHeat(selectedHeatId()).heatNameJa);
-        shareTexts.push(sizes.getSize(selectedSizeId()).sizeNameJa);
+        if (selectedHeatId() !== null) {
+            shareTexts.push(heats.getHeat(selectedHeatId()).heatNameJa);
+        }
+        if (selectedSizeId() !== null) {
+            shareTexts.push(sizes.getSize(selectedSizeId()).sizeNameJa);
+        }
         shareTexts.push(drinkName);
         document.querySelectorAll(`#customs > li:not(.${dnone}) ${customRadioSelector}:checked`).forEach(radio => {
             const customTypeId = radio.dataset.type;
@@ -319,14 +338,6 @@ window.addEventListener('DOMContentLoaded', () => {
         document.querySelector(`#${disableType}-button`).closest('li').classList.remove(dnone);
         window.scroll(0, 0);
     }
-
-    /**
-     * 戻るボタンクリック
-     */
-    // document.querySelector('#history-back').addEventListener('click', e => {
-    //     e.preventDefault();
-    //     history.back();
-    // });
 
     /**
      * 温度切り替え
