@@ -1,0 +1,2481 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no", minimal-ui>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<title>京急列車走行位置</title>
+<link rel="manifest" href="./manifest.json">
+<link rel="shortcut icon" href="./favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" href="./css/index.css">
+</head>
+<body>
+
+<header>
+  <h1>京急列車走行位置</h1>
+  <p><span>更新日時：</span><time id="up-time">2021-10-03 00:00:00</time></p>
+</header>
+
+<main>
+  <h2 id="main">本線</h2>
+  <div class="station-area" data-station="1">
+    <div class="gap">
+      <div></div>
+      <div class="tracks">
+        <ul class="up">
+          <li class="up-1"><span data-type="4" data-direction="2">普</span></li>
+        </ul>
+        <ul class="down">
+          <li class="down-1"><span data-type="4" data-direction="1">普</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="station">
+      <div>
+        <i class="number"><span>01</span></i>
+        <div>
+          <h3>品川</h3>
+          <ul class="train-types">
+            <li data-type="4">普</li>
+            <li data-type="3">急</li>
+            <li data-type="2">特</li>
+            <li data-type="1">快</li>
+            <li data-type="6">快</li>
+          </ul>
+        </div>
+      </div>
+      <div class="tracks">
+        <ul class="up">
+          <li class="up-2" data-track="3"><span data-type="4" data-direction="1">普</span></li>
+          <li class="up-1" data-track="2">
+            <span data-type="4" data-direction="2">普</span>
+            <span data-type="4" data-direction="2">普</span>
+          </li>
+        </ul>
+        <ul class="down">
+          <li class="down-1" data-track="1"><span data-type="4" data-direction="1">普</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="station-area" data-station="2">
+    <div class="gap">
+      <div></div>
+      <div class="tracks">
+        <ul class="up">
+          <li class="up-1"><span data-type="4" data-direction="2">普</span></li>
+        </ul>
+        <ul class="down">
+          <li class="down-1"><span data-type="4" data-direction="1">普</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="station">
+      <div>
+        <i class="number"><span>02</span></i>
+        <div>
+          <h3>北品川</h3>
+          <ul class="train-types">
+            <li data-type="4">普</li>
+          </ul>
+        </div>
+      </div>
+      <div class="tracks">
+        <ul class="up">
+          <li class="up-1" data-track="2">
+            <span data-type="4" data-direction="2">普</span>
+          </li>
+        </ul>
+        <ul class="down">
+          <li class="down-1" data-track="1"><span data-type="4" data-direction="1">普</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="station-area" data-station="3">
+    <div class="gap">
+      <div></div>
+      <div class="tracks">
+        <ul class="up">
+          <li class="up-1"><span data-type="4" data-direction="2">普</span></li>
+        </ul>
+        <ul class="down">
+          <li class="down-1"><span data-type="4" data-direction="1">普</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="station">
+      <div>
+        <i class="number"><span>03</span></i>
+        <div>
+          <h3>新馬場</h3>
+          <ul class="train-types">
+            <li data-type="4">普</li>
+          </ul>
+        </div>
+      </div>
+      <div class="tracks">
+        <ul class="up">
+          <li class="up-1" data-track="2">
+            <span data-type="4" data-direction="2">普</span>
+          </li>
+        </ul>
+        <ul class="down">
+          <li class="down-1" data-track="1"><span data-type="4" data-direction="1">普</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="station-area" data-station="4">
+    <div class="gap">
+      <div></div>
+      <div class="tracks">
+        <ul class="up">
+          <li class="up-1"><span data-type="4" data-direction="2">普</span></li>
+        </ul>
+        <ul class="down">
+          <li class="down-1"><span data-type="4" data-direction="1">普</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="station">
+      <div>
+        <i class="number"><span>04</span></i>
+        <div>
+          <h3>青物横丁</h3>
+          <ul class="train-types">
+            <li data-type="4">普</li>
+            <li data-type="3">急</li>
+            <li data-type="2">特</li>
+          </ul>
+        </div>
+      </div>
+      <div class="tracks">
+        <ul class="up">
+          <li class="up-1" data-track="2">
+            <span data-type="4" data-direction="2">普</span>
+          </li>
+        </ul>
+        <ul class="down">
+          <li class="down-1" data-track="1"><span data-type="4" data-direction="1">普</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="station-area" data-station="5">
+    <div class="gap">
+      <div></div>
+      <div class="tracks">
+        <ul class="up">
+          <li class="up-1"><span data-type="4" data-direction="2">普</span></li>
+        </ul>
+        <ul class="down">
+          <li class="down-1"><span data-type="4" data-direction="1">普</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="station">
+      <div>
+        <i class="number"><span>05</span></i>
+        <div>
+          <h3>鮫洲</h3>
+          <ul class="train-types">
+            <li data-type="4">普</li>
+          </ul>
+        </div>
+      </div>
+      <div class="tracks">
+        <ul class="up">
+          <li class="up-2" data-track="4"><span data-type="4" data-direction="2">普</span></li>
+          <li class="up-1" data-track="3"><span data-type="4" data-direction="2">普</span></li>
+        </ul>
+        <ul class="down">
+          <li class="down-1" data-track="2"><span data-type="4" data-direction="1">普</span></li>
+          <li class="down-2" data-track="1"><span data-type="4" data-direction="1">普</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="station-area" data-station="6">
+    <div class="gap">
+      <div></div>
+      <div class="tracks">
+        <ul class="up">
+          <li class="up-1"><span data-type="4" data-direction="2">普</span></li>
+        </ul>
+        <ul class="down">
+          <li class="down-1"><span data-type="4" data-direction="1">普</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="station">
+      <div>
+        <i class="number"><span>06</span></i>
+        <div>
+          <h3>立会川</h3>
+          <ul class="train-types">
+            <li data-type="4">普</li>
+            <li data-type="3">急</li>
+          </ul>
+        </div>
+      </div>
+      <div class="tracks">
+        <ul class="up">
+          <li class="up-1" data-track="2"><span data-type="4" data-direction="2">普</span></li>
+        </ul>
+        <ul class="down">
+          <li class="down-1" data-track="1"><span data-type="4" data-direction="1">普</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="station-area" data-station="7">
+    <div class="gap">
+      <div></div>
+      <div class="tracks">
+        <ul class="up">
+          <li class="up-1"><span data-type="4" data-direction="2">普</span></li>
+        </ul>
+        <ul class="down">
+          <li class="down-1"><span data-type="4" data-direction="1">普</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="station">
+      <div>
+        <i class="number"><span>07</span></i>
+        <div>
+          <h3>大森海岸</h3>
+          <ul class="train-types">
+            <li data-type="4">普</li>
+          </ul>
+        </div>
+      </div>
+      <div class="tracks">
+        <ul class="up">
+          <li class="up-1" data-track="2"><span data-type="4" data-direction="2">普</span></li>
+        </ul>
+        <ul class="down">
+          <li class="down-1" data-track="1"><span data-type="4" data-direction="1">普</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="station-area" data-station="8">
+    <div class="gap">
+      <div></div>
+      <div class="tracks">
+        <ul class="up">
+          <li class="up-1"><span data-type="4" data-direction="2">普</span></li>
+        </ul>
+        <ul class="down">
+          <li class="down-1"><span data-type="4" data-direction="1">普</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="station">
+      <div>
+        <i class="number"><span>08</span></i>
+        <div>
+          <h3>平和島</h3>
+          <ul class="train-types">
+            <li data-type="4">普</li>
+            <li data-type="3">急</li>
+            <li data-type="2">特</li>
+          </ul>
+        </div>
+      </div>
+      <div class="tracks">
+        <ul class="up">
+          <li class="up-2" data-track="4"><span data-type="4" data-direction="2">普</span></li>
+          <li class="up-1" data-track="3"><span data-type="4" data-direction="2">普</span></li>
+        </ul>
+        <ul class="down">
+          <li class="down-1" data-track="2"><span data-type="4" data-direction="1">普</span></li>
+          <li class="down-2" data-track="1"><span data-type="4" data-direction="1">普</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="station-area" data-station="9">
+    <div class="gap">
+      <div></div>
+      <div class="tracks">
+        <ul class="up">
+          <li class="up-1"><span data-type="4" data-direction="2">普</span></li>
+        </ul>
+        <ul class="down">
+          <li class="down-1"><span data-type="4" data-direction="1">普</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="station">
+      <div>
+        <i class="number"><span>09</span></i>
+        <div>
+          <h3>大森町</h3>
+          <ul class="train-types">
+            <li data-type="4">普</li>
+          </ul>
+        </div>
+      </div>
+      <div class="tracks">
+        <ul class="up">
+          <li class="up-1" data-track="2"><span data-type="4" data-direction="2">普</span></li>
+        </ul>
+        <ul class="down">
+          <li class="down-1" data-track="1"><span data-type="4" data-direction="1">普</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="station-area" data-station="10">
+    <div class="gap">
+      <div></div>
+      <div class="tracks">
+        <ul class="up">
+          <li class="up-1"><span data-type="4" data-direction="2">普</span></li>
+        </ul>
+        <ul class="down">
+          <li class="down-1"><span data-type="4" data-direction="1">普</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="station">
+      <div>
+        <i class="number"><span>10</span></i>
+        <div>
+          <h3>梅屋敷</h3>
+          <ul class="train-types">
+            <li data-type="4">普</li>
+          </ul>
+        </div>
+      </div>
+      <div class="tracks">
+        <ul class="up">
+          <li class="up-1" data-track="2"><span data-type="4" data-direction="2">普</span></li>
+        </ul>
+        <ul class="down">
+          <li class="down-1" data-track="1"><span data-type="4" data-direction="1">普</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="station-area" data-station="11">
+    <div class="gap">
+      <div></div>
+      <div class="tracks">
+        <ul class="up">
+          <li class="up-1"><span data-type="4" data-direction="2">普</span></li>
+        </ul>
+        <ul class="down">
+          <li class="down-1"><span data-type="4" data-direction="1">普</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="station">
+      <div>
+        <i class="number"><span>11</span></i>
+        <div>
+          <h3>京急鎌田</h3>
+          <ul class="train-types">
+            <li data-type="4">普</li>
+            <li data-type="3">急</li>
+            <li data-type="2">特</li>
+            <li data-type="1">快</li>
+          </ul>
+        </div>
+      </div>
+      <div class="tracks">
+        <ul class="up">
+          <li class="up-3" data-track="6"><span data-type="4" data-direction="2">普</span></li>
+          <li class="up-2" data-track="5"><span data-type="4" data-direction="2">普</span></li>
+          <li class="up-1" data-track="4"><span data-type="4" data-direction="1">普</span></li>
+        </ul>
+        <ul class="down">
+          <li class="down-1" data-track="3"><span data-type="4" data-direction="1">普</span></li>
+          <li class="down-2" data-track="2"><span data-type="4" data-direction="1">普</span></li>
+          <li class="down-3" data-track="1"><span data-type="4" data-direction="1">普</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="station-area" data-station="18">
+    <div class="gap">
+      <div id="airport">
+        <details>
+          <summary><h2>空港線</h2></summary>
+          <div class="station-area" data-station="12">
+            <div class="gap">
+              <div></div>
+              <div class="tracks">
+                <ul class="up">
+                  <li class="up-1"><span data-type="4" data-direction="2">普</span></li>
+                </ul>
+                <ul class="down">
+                  <li class="down-1"><span data-type="4" data-direction="1">普</span></li>
+                </ul>
+              </div>
+            </div>
+            <div class="station">
+              <div>
+                <i class="number"><span>12</span></i>
+                <div>
+                  <h3>糀谷</h3>
+                  <ul class="train-types">
+                    <li data-type="4">普</li>
+                    <li data-type="3">急</li>
+                    <li data-type="2">特</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="tracks">
+                <ul class="up">
+                  <li class="up-1" data-track="2"><span data-type="4" data-direction="2">普</span></li>
+                </ul>
+                <ul class="down">
+                  <li class="down-1" data-track="1"><span data-type="4" data-direction="1">普</span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="station-area" data-station="13">
+            <div class="gap">
+              <div></div>
+              <div class="tracks">
+                <ul class="up">
+                  <li class="up-1"><span data-type="4" data-direction="2">普</span></li>
+                </ul>
+                <ul class="down">
+                  <li class="down-1"><span data-type="4" data-direction="1">普</span></li>
+                </ul>
+              </div>
+            </div>
+            <div class="station">
+              <div>
+                <i class="number"><span>13</span></i>
+                <div>
+                  <h3>大鳥居</h3>
+                  <ul class="train-types">
+                    <li data-type="4">普</li>
+                    <li data-type="3">急</li>
+                    <li data-type="2">特</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="tracks">
+                <ul class="up">
+                  <li class="up-1" data-track="2"><span data-type="4" data-direction="2">普</span></li>
+                </ul>
+                <ul class="down">
+                  <li class="down-1" data-track="1"><span data-type="4" data-direction="1">普</span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="station-area" data-station="14">
+            <div class="gap">
+              <div></div>
+              <div class="tracks">
+                <ul class="up">
+                  <li class="up-1"><span data-type="4" data-direction="2">普</span></li>
+                </ul>
+                <ul class="down">
+                  <li class="down-1"><span data-type="4" data-direction="1">普</span></li>
+                </ul>
+              </div>
+            </div>
+            <div class="station">
+              <div>
+                <i class="number"><span>14</span></i>
+                <div>
+                  <h3>穴守稲荷</h3>
+                  <ul class="train-types">
+                    <li data-type="4">普</li>
+                    <li data-type="3">急</li>
+                    <li data-type="2">特</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="tracks">
+                <ul class="up">
+                  <li class="up-1" data-track="2"><span data-type="4" data-direction="2">普</span></li>
+                </ul>
+                <ul class="down">
+                  <li class="down-1" data-track="1"><span data-type="4" data-direction="1">普</span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="station-area" data-station="15">
+            <div class="gap">
+              <div></div>
+              <div class="tracks">
+                <ul class="up">
+                  <li class="up-1"><span data-type="4" data-direction="2">普</span></li>
+                </ul>
+                <ul class="down">
+                  <li class="down-1"><span data-type="4" data-direction="1">普</span></li>
+                </ul>
+              </div>
+            </div>
+            <div class="station">
+              <div>
+                <i class="number"><span>15</span></i>
+                <div>
+                  <h3>天空橋</h3>
+                  <ul class="train-types">
+                    <li data-type="4">普</li>
+                    <li data-type="3">急</li>
+                    <li data-type="2">特</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="tracks">
+                <ul class="up">
+                  <li class="up-1" data-track="2"><span data-type="4" data-direction="2">普</span></li>
+                </ul>
+                <ul class="down">
+                  <li class="down-1" data-track="1"><span data-type="4" data-direction="1">普</span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="station-area" data-station="16">
+            <div class="gap">
+              <div></div>
+              <div class="tracks">
+                <ul class="up">
+                  <li class="up-1"><span data-type="4" data-direction="2">普</span></li>
+                </ul>
+                <ul class="down">
+                  <li class="down-1"><span data-type="4" data-direction="1">普</span></li>
+                </ul>
+              </div>
+            </div>
+            <div class="station">
+              <div>
+                <i class="number"><span>16</span></i>
+                <div>
+                  <h3>羽田空港<br>第3ターミナル</h3>
+                  <ul class="train-types">
+                    <li data-type="4">普</li>
+                    <li data-type="3">急</li>
+                    <li data-type="2">特</li>
+                    <li data-type="1">快</li>
+                    <li data-type="6">快</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="tracks">
+                <ul class="up">
+                  <li class="up-1" data-track="2"><span data-type="4" data-direction="2">普</span></li>
+                </ul>
+                <ul class="down">
+                  <li class="down-1" data-track="1"><span data-type="4" data-direction="1">普</span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="station-area" data-station="17">
+            <div class="gap">
+              <div></div>
+              <div class="tracks">
+                <ul class="up">
+                  <li class="up-1"><span data-type="4" data-direction="2">普</span></li>
+                </ul>
+                <ul class="down">
+                  <li class="down-1"><span data-type="4" data-direction="1">普</span></li>
+                </ul>
+              </div>
+            </div>
+            <div class="station">
+              <div>
+                <i class="number"><span>17</span></i>
+                <div>
+                  <h3>羽田空港<br>第1・第2ターミナル</h3>
+                  <ul class="train-types">
+                    <li data-type="4">普</li>
+                    <li data-type="3">急</li>
+                    <li data-type="2">特</li>
+                    <li data-type="1">快</li>
+                    <li data-type="6">快</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="tracks">
+                <ul class="up">
+                  <li class="up-1" data-track="2"><span data-type="4" data-direction="2">普</span></li>
+                </ul>
+                <ul class="down">
+                  <li class="down-1" data-track="1"><span data-type="4" data-direction="2">普</span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </details>
+      </div>
+      <div class="tracks">
+        <ul class="up">
+          <li class="up-1"><span data-type="4" data-direction="2">普</span></li>
+        </ul>
+        <ul class="down">
+          <li class="down-1"><span data-type="4" data-direction="1">普</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="station">
+      <div>
+        <i class="number"><span>18</span></i>
+        <div>
+          <h3>雑色</h3>
+          <ul class="train-types">
+            <li data-type="4">普</li>
+          </ul>
+        </div>
+      </div>
+      <div class="tracks">
+        <ul class="up">
+          <li class="up-1" data-track="2"><span data-type="4" data-direction="2">普</span></li>
+        </ul>
+        <ul class="down">
+          <li class="down-1" data-track="1"><span data-type="4" data-direction="1">普</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="station-area" data-station="19">
+    <div class="gap">
+      <div></div>
+      <div class="tracks">
+        <ul class="up">
+          <li class="up-1"><span data-type="4" data-direction="2">普</span></li>
+        </ul>
+        <ul class="down">
+          <li class="down-1"><span data-type="4" data-direction="1">普</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="station">
+      <div>
+        <i class="number"><span>19</span></i>
+        <div>
+          <h3>六郷土手</h3>
+          <ul class="train-types">
+            <li data-type="4">普</li>
+          </ul>
+        </div>
+      </div>
+      <div class="tracks">
+        <ul class="up">
+          <li class="up-1" data-track="2"><span data-type="4" data-direction="2">普</span></li>
+        </ul>
+        <ul class="down">
+          <li class="down-1" data-track="1"><span data-type="4" data-direction="1">普</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="station-area" data-station="20">
+    <div class="gap">
+      <div></div>
+      <div class="tracks">
+        <ul class="up">
+          <li class="up-1"><span data-type="4" data-direction="2">普</span></li>
+        </ul>
+        <ul class="down">
+          <li class="down-1"><span data-type="4" data-direction="1">普</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="station">
+      <div>
+        <i class="number"><span>20</span></i>
+        <div>
+          <h3>京急川崎</h3>
+          <ul class="train-types">
+            <li data-type="4">普</li>
+            <li data-type="3">急</li>
+            <li data-type="2">特</li>
+            <li data-type="1">快</li>
+          </ul>
+        </div>
+      </div>
+      <div class="tracks">
+        <ul class="up">
+          <li class="up-4" data-track="1"><span data-type="4" data-direction="1">普</span></li>
+          <li class="up-3" data-track="2"><span data-type="4" data-direction="1">普</span></li>
+          <li class="up-2" data-track="6"><span data-type="4" data-direction="2">普</span></li>
+          <li class="up-1" data-track="5"><span data-type="4" data-direction="2">普</span></li>
+        </ul>
+        <ul class="down">
+          <li class="down-1" data-track="4"><span data-type="4" data-direction="1">普</span></li>
+          <li class="down-2" data-track="3"><span data-type="4" data-direction="1">普</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="station-area" data-station="27">
+    <div class="gap">
+      <div id="daishi">
+        <details>
+          <summary><h2>大師線</h2></summary>
+          <div class="station-area" data-station="21">
+            <div class="gap">
+              <div></div>
+              <div class="tracks">
+                <ul class="up">
+                  <li class="up-1"><span data-type="4" data-direction="2">普</span></li>
+                </ul>
+                <ul class="down">
+                  <li class="down-1"><span data-type="4" data-direction="1">普</span></li>
+                </ul>
+              </div>
+            </div>
+            <div class="station">
+              <div>
+                <i class="number"><span>21</span></i>
+                <div>
+                  <h3>港町</h3>
+                  <ul class="train-types">
+                    <li data-type="4">普</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="tracks">
+                <ul class="up">
+                  <li class="up-1" data-track="2"><span data-type="4" data-direction="2">普</span></li>
+                </ul>
+                <ul class="down">
+                  <li class="down-1" data-track="1"><span data-type="4" data-direction="1">普</span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="station-area" data-station="22">
+            <div class="gap">
+              <div></div>
+              <div class="tracks">
+                <ul class="up">
+                  <li class="up-1"><span data-type="4" data-direction="2">普</span></li>
+                </ul>
+                <ul class="down">
+                  <li class="down-1"><span data-type="4" data-direction="1">普</span></li>
+                </ul>
+              </div>
+            </div>
+            <div class="station">
+              <div>
+                <i class="number"><span>22</span></i>
+                <div>
+                  <h3>鈴木町</h3>
+                  <ul class="train-types">
+                    <li data-type="4">普</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="tracks">
+                <ul class="up">
+                  <li class="up-1" data-track="2"><span data-type="4" data-direction="2">普</span></li>
+                </ul>
+                <ul class="down">
+                  <li class="down-1" data-track="1"><span data-type="4" data-direction="1">普</span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="station-area" data-station="23">
+            <div class="gap">
+              <div></div>
+              <div class="tracks">
+                <ul class="up">
+                  <li class="up-1"><span data-type="4" data-direction="2">普</span></li>
+                </ul>
+                <ul class="down">
+                  <li class="down-1"><span data-type="4" data-direction="1">普</span></li>
+                </ul>
+              </div>
+            </div>
+            <div class="station">
+              <div>
+                <i class="number"><span>23</span></i>
+                <div>
+                  <h3>川崎大師</h3>
+                  <ul class="train-types">
+                    <li data-type="4">普</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="tracks">
+                <ul class="up">
+                  <li class="up-1" data-track="2"><span data-type="4" data-direction="2">普</span></li>
+                </ul>
+                <ul class="down">
+                  <li class="down-1" data-track="1"><span data-type="4" data-direction="1">普</span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="station-area" data-station="24">
+            <div class="gap">
+              <div></div>
+              <div class="tracks">
+                <ul class="up">
+                  <li class="up-1"><span data-type="4" data-direction="2">普</span></li>
+                </ul>
+                <ul class="down">
+                  <li class="down-1"><span data-type="4" data-direction="1">普</span></li>
+                </ul>
+              </div>
+            </div>
+            <div class="station">
+              <div>
+                <i class="number"><span>24</span></i>
+                <div>
+                  <h3>東門前</h3>
+                  <ul class="train-types">
+                    <li data-type="4">普</li>
+                    <li data-type="3">急</li>
+                    <li data-type="2">特</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="tracks">
+                <ul class="up">
+                  <li class="up-1" data-track="2"><span data-type="4" data-direction="2">普</span></li>
+                </ul>
+                <ul class="down">
+                  <li class="down-1" data-track="1"><span data-type="4" data-direction="1">普</span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="station-area" data-station="25">
+            <div class="gap">
+              <div></div>
+              <div class="tracks">
+                <ul class="up">
+                  <li class="up-1"><span data-type="4" data-direction="2">普</span></li>
+                </ul>
+                <ul class="down">
+                  <li class="down-1"><span data-type="4" data-direction="1">普</span></li>
+                </ul>
+              </div>
+            </div>
+            <div class="station">
+              <div>
+                <i class="number"><span>25</span></i>
+                <div>
+                  <h3>大師橋</h3>
+                  <ul class="train-types">
+                    <li data-type="4">普</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="tracks">
+                <ul class="up">
+                  <li class="up-1" data-track="2"><span data-type="4" data-direction="2">普</span></li>
+                </ul>
+                <ul class="down">
+                  <li class="down-1" data-track="1"><span data-type="4" data-direction="1">普</span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="station-area" data-station="26">
+            <div class="gap">
+              <div></div>
+              <div class="tracks">
+                <ul class="up">
+                  <li class="up-1"><span data-type="4" data-direction="2">普</span></li>
+                </ul>
+                <ul class="down">
+                  <li class="down-1"><span data-type="4" data-direction="1">普</span></li>
+                </ul>
+              </div>
+            </div>
+            <div class="station">
+              <div>
+                <i class="number"><span>26</span></i>
+                <div>
+                  <h3>小島新田</h3>
+                  <ul class="train-types">
+                    <li data-type="4">普</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="tracks">
+                <ul class="up">
+                  <li class="up-1" data-track="2"><span data-type="4" data-direction="2">普</span></li>
+                </ul>
+                <ul class="down">
+                  <li class="down-1" data-track="1"><span data-type="4" data-direction="2">普</span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </details>
+      </div>
+      <div class="tracks">
+        <ul class="up">
+          <li class="up-1"><span data-type="4" data-direction="2">普</span></li>
+        </ul>
+        <ul class="down">
+          <li class="down-1"><span data-type="4" data-direction="1">普</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="station">
+      <div>
+        <i class="number"><span>27</span></i>
+        <div>
+          <h3>八丁畷</h3>
+          <ul class="train-types">
+            <li data-type="4">普</li>
+          </ul>
+        </div>
+      </div>
+      <div class="tracks">
+        <ul class="up">
+          <li class="up-1" data-track="2"><span data-type="4" data-direction="2">普</span></li>
+        </ul>
+        <ul class="down">
+          <li class="down-1" data-track="1"><span data-type="4" data-direction="1">普</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="station-area" data-station="28">
+    <div class="gap">
+      <div></div>
+      <div class="tracks">
+        <ul class="up">
+          <li class="up-1"><span data-type="4" data-direction="2">普</span></li>
+        </ul>
+        <ul class="down">
+          <li class="down-1"><span data-type="4" data-direction="1">普</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="station">
+      <div>
+        <i class="number"><span>28</span></i>
+        <div>
+          <h3>鶴見市場</h3>
+          <ul class="train-types">
+            <li data-type="4">普</li>
+          </ul>
+        </div>
+      </div>
+      <div class="tracks">
+        <ul class="up">
+          <li class="up-1" data-track="2"><span data-type="4" data-direction="2">普</span></li>
+        </ul>
+        <ul class="down">
+          <li class="down-1" data-track="1"><span data-type="4" data-direction="1">普</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="station-area" data-station="29">
+    <div class="gap">
+      <div></div>
+      <div class="tracks">
+        <ul class="up">
+          <li class="up-1"><span data-type="4" data-direction="2">普</span></li>
+        </ul>
+        <ul class="down">
+          <li class="down-1"><span data-type="4" data-direction="1">普</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="station">
+      <div>
+        <i class="number"><span>29</span></i>
+        <div>
+          <h3>京急鶴見</h3>
+          <ul class="train-types">
+            <li data-type="4">普</li>
+            <li data-type="3">急</li>
+          </ul>
+        </div>
+      </div>
+      <div class="tracks">
+        <ul class="up">
+          <li class="up-2" data-track="3"><span data-type="4" data-direction="2">普</span></li>
+          <li class="up-1" data-track="2"><span data-type="4" data-direction="2">普</span></li>
+        </ul>
+        <ul class="down">
+          <li class="down-1" data-track="1"><span data-type="4" data-direction="1">普</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="station-area" data-station="30">
+    <div class="gap">
+      <div></div>
+      <div class="tracks">
+        <ul class="up">
+          <li class="up-1"><span data-type="4" data-direction="2">普</span></li>
+        </ul>
+        <ul class="down">
+          <li class="down-1"><span data-type="4" data-direction="1">普</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="station">
+      <div>
+        <i class="number"><span>30</span></i>
+        <div>
+          <h3>花月総持寺</h3>
+          <ul class="train-types">
+            <li data-type="4">普</li>
+          </ul>
+        </div>
+      </div>
+      <div class="tracks">
+        <ul class="up">
+          <li class="up-1" data-track="2"><span data-type="4" data-direction="2">普</span></li>
+        </ul>
+        <ul class="down">
+          <li class="down-1" data-track="1"><span data-type="4" data-direction="1">普</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="station-area" data-station="31">
+    <div class="gap">
+      <div></div>
+      <div class="tracks">
+        <ul class="up">
+          <li class="up-1"><span data-type="4" data-direction="2">普</span></li>
+        </ul>
+        <ul class="down">
+          <li class="down-1"><span data-type="4" data-direction="1">普</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="station">
+      <div>
+        <i class="number"><span>31</span></i>
+        <div>
+          <h3>生麦</h3>
+          <ul class="train-types">
+            <li data-type="4">普</li>
+          </ul>
+        </div>
+      </div>
+      <div class="tracks">
+        <ul class="up">
+          <li class="up-1" data-track="3"><span data-type="4" data-direction="2">普</span></li>
+        </ul>
+        <ul class="down">
+          <li class="down-1" data-track="2"><span data-type="4" data-direction="1">普</span></li>
+          <li class="down-2" data-track="1"><span data-type="4" data-direction="1">普</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="station-area" data-station="32">
+    <div class="gap">
+      <div></div>
+      <div class="tracks">
+        <ul class="up">
+          <li class="up-1"><span data-type="4" data-direction="2">普</span></li>
+        </ul>
+        <ul class="down">
+          <li class="down-1"><span data-type="4" data-direction="1">普</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="station">
+      <div>
+        <i class="number"><span>32</span></i>
+        <div>
+          <h3>京急新子安</h3>
+          <ul class="train-types">
+            <li data-type="4">普</li>
+          </ul>
+        </div>
+      </div>
+      <div class="tracks">
+        <ul class="up">
+          <li class="up-1" data-track="2"><span data-type="4" data-direction="2">普</span></li>
+        </ul>
+        <ul class="down">
+          <li class="down-1" data-track="1"><span data-type="4" data-direction="1">普</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="station-area" data-station="33">
+    <div class="gap">
+      <div></div>
+      <div class="tracks">
+        <ul class="up">
+          <li class="up-1"><span data-type="4" data-direction="2">普</span></li>
+        </ul>
+        <ul class="down">
+          <li class="down-1"><span data-type="4" data-direction="1">普</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="station">
+      <div>
+        <i class="number"><span>33</span></i>
+        <div>
+          <h3>子安</h3>
+          <ul class="train-types">
+            <li data-type="4">普</li>
+          </ul>
+        </div>
+      </div>
+      <div class="tracks">
+        <ul class="up">
+          <li class="up-2" data-track="4"><span data-type="4" data-direction="2">普</span></li>
+          <li class="up-1" data-track="3"><span data-type="4" data-direction="2">普</span></li>
+        </ul>
+        <ul class="down">
+          <li class="down-1" data-track="2"><span data-type="4" data-direction="1">普</span></li>
+          <li class="down-2" data-track="1"><span data-type="4" data-direction="1">普</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="station-area" data-station="34">
+    <div class="gap">
+      <div></div>
+      <div class="tracks">
+        <ul class="up">
+          <li class="up-2"><span data-type="4" data-direction="2">普</span></li>
+          <li class="up-1"><span data-type="4" data-direction="2">普</span></li>
+        </ul>
+        <ul class="down">
+          <li class="down-1"><span data-type="4" data-direction="1">普</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="station">
+      <div>
+        <i class="number"><span>34</span></i>
+        <div>
+          <h3>神奈川新町</h3>
+          <ul class="train-types">
+            <li data-type="4">普</li>
+            <li data-type="3">急</li>
+            <li data-type="2">特</li>
+          </ul>
+        </div>
+      </div>
+      <div class="tracks">
+        <ul class="up">
+          <li class="up-2" data-track="4"><span data-type="4" data-direction="2">普</span></li>
+          <li class="up-1" data-track="3"><span data-type="4" data-direction="2">普</span></li>
+        </ul>
+        <ul class="down">
+          <li class="down-1" data-track="2"><span data-type="4" data-direction="1">普</span></li>
+          <li class="down-2" data-track="1"><span data-type="4" data-direction="1">普</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="station-area" data-station="35">
+    <div class="gap">
+      <div></div>
+      <div class="tracks">
+        <ul class="up">
+          <li class="up-1"><span data-type="4" data-direction="2">普</span></li>
+        </ul>
+        <ul class="down">
+          <li class="down-1"><span data-type="4" data-direction="1">普</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="station">
+      <div>
+        <i class="number"><span>35</span></i>
+        <div>
+          <h3>京急東神奈川</h3>
+          <ul class="train-types">
+            <li data-type="4">普</li>
+            <li data-type="3">急</li>
+          </ul>
+        </div>
+      </div>
+      <div class="tracks">
+        <ul class="up">
+          <li class="up-1" data-track="2"><span data-type="4" data-direction="2">普</span></li>
+        </ul>
+        <ul class="down">
+          <li class="down-1" data-track="1"><span data-type="4" data-direction="1">普</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="station-area" data-station="36">
+    <div class="gap">
+      <div></div>
+      <div class="tracks">
+        <ul class="up">
+          <li class="up-1"><span data-type="4" data-direction="2">普</span></li>
+        </ul>
+        <ul class="down">
+          <li class="down-1"><span data-type="4" data-direction="1">普</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="station">
+      <div>
+        <i class="number"><span>36</span></i>
+        <div>
+          <h3>神奈川</h3>
+          <ul class="train-types">
+            <li data-type="4">普</li>
+          </ul>
+        </div>
+      </div>
+      <div class="tracks">
+        <ul class="up">
+          <li class="up-1" data-track="2"><span data-type="4" data-direction="2">普</span></li>
+        </ul>
+        <ul class="down">
+          <li class="down-1" data-track="1"><span data-type="4" data-direction="1">普</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="station-area" data-station="37">
+    <div class="gap">
+      <div></div>
+      <div class="tracks">
+        <ul class="up">
+          <li class="up-1"><span data-type="4" data-direction="2">普</span></li>
+        </ul>
+        <ul class="down">
+          <li class="down-1"><span data-type="4" data-direction="1">普</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="station">
+      <div>
+        <i class="number"><span>37</span></i>
+        <div>
+          <h3>横浜</h3>
+          <ul class="train-types">
+            <li data-type="4">普</li>
+            <li data-type="3">急</li>
+            <li data-type="2">特</li>
+            <li data-type="1">快</li>
+          </ul>
+        </div>
+      </div>
+      <div class="tracks">
+        <ul class="up">
+          <li class="up-1" data-track="2"><span data-type="4" data-direction="2">普</span></li>
+        </ul>
+        <ul class="down">
+          <li class="down-1" data-track="1"><span data-type="4" data-direction="1">普</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="station-area" data-station="38">
+    <div class="gap">
+      <div></div>
+      <div class="tracks">
+        <ul class="up">
+          <li class="up-1"><span data-type="4" data-direction="2">普</span></li>
+        </ul>
+        <ul class="down">
+          <li class="down-1"><span data-type="4" data-direction="1">普</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="station">
+      <div>
+        <i class="number"><span>38</span></i>
+        <div>
+          <h3>戸部</h3>
+          <ul class="train-types">
+            <li data-type="4">普</li>
+          </ul>
+        </div>
+      </div>
+      <div class="tracks">
+        <ul class="up">
+          <li class="up-1" data-track="2"><span data-type="4" data-direction="2">普</span></li>
+        </ul>
+        <ul class="down">
+          <li class="down-1" data-track="1"><span data-type="4" data-direction="1">普</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="station-area" data-station="39">
+    <div class="gap">
+      <div></div>
+      <div class="tracks">
+        <ul class="up">
+          <li class="up-1"><span data-type="4" data-direction="2">普</span></li>
+        </ul>
+        <ul class="down">
+          <li class="down-1"><span data-type="4" data-direction="1">普</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="station">
+      <div>
+        <i class="number"><span>39</span></i>
+        <div>
+          <h3>日ノ出町</h3>
+          <ul class="train-types">
+            <li data-type="4">普</li>
+            <li data-type="3">急</li>
+          </ul>
+        </div>
+      </div>
+      <div class="tracks">
+        <ul class="up">
+          <li class="up-1" data-track="2"><span data-type="4" data-direction="2">普</span></li>
+        </ul>
+        <ul class="down">
+          <li class="down-1" data-track="1"><span data-type="4" data-direction="1">普</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="station-area" data-station="40">
+    <div class="gap">
+      <div></div>
+      <div class="tracks">
+        <ul class="up">
+          <li class="up-1"><span data-type="4" data-direction="2">普</span></li>
+        </ul>
+        <ul class="down">
+          <li class="down-1"><span data-type="4" data-direction="1">普</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="station">
+      <div>
+        <i class="number"><span>40</span></i>
+        <div>
+          <h3>黄金町</h3>
+          <ul class="train-types">
+            <li data-type="4">普</li>
+          </ul>
+        </div>
+      </div>
+      <div class="tracks">
+        <ul class="up">
+          <li class="up-1" data-track="2"><span data-type="4" data-direction="2">普</span></li>
+        </ul>
+        <ul class="down">
+          <li class="down-1" data-track="1"><span data-type="4" data-direction="1">普</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="station-area" data-station="41">
+    <div class="gap">
+      <div></div>
+      <div class="tracks">
+        <ul class="up">
+          <li class="up-1"><span data-type="4" data-direction="2">普</span></li>
+        </ul>
+        <ul class="down">
+          <li class="down-1"><span data-type="4" data-direction="1">普</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="station">
+      <div>
+        <i class="number"><span>41</span></i>
+        <div>
+          <h3>南太田</h3>
+          <ul class="train-types">
+            <li data-type="4">普</li>
+          </ul>
+        </div>
+      </div>
+      <div class="tracks">
+        <ul class="up">
+          <li class="up-2" data-track="4"><span data-type="4" data-direction="2">普</span></li>
+          <li class="up-1" data-track="3"><span data-type="4" data-direction="2">普</span></li>
+        </ul>
+        <ul class="down">
+          <li class="down-1" data-track="2"><span data-type="4" data-direction="1">普</span></li>
+          <li class="down-2" data-track="1"><span data-type="4" data-direction="1">普</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="station-area" data-station="42">
+    <div class="gap">
+      <div></div>
+      <div class="tracks">
+        <ul class="up">
+          <li class="up-1"><span data-type="4" data-direction="2">普</span></li>
+        </ul>
+        <ul class="down">
+          <li class="down-1"><span data-type="4" data-direction="1">普</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="station">
+      <div>
+        <i class="number"><span>42</span></i>
+        <div>
+          <h3>井土ヶ谷</h3>
+          <ul class="train-types">
+            <li data-type="4">普</li>
+            <li data-type="3">急</li>
+          </ul>
+        </div>
+      </div>
+      <div class="tracks">
+        <ul class="up">
+          <li class="up-1" data-track="2"><span data-type="4" data-direction="2">普</span></li>
+        </ul>
+        <ul class="down">
+          <li class="down-1" data-track="1"><span data-type="4" data-direction="1">普</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="station-area" data-station="43">
+    <div class="gap">
+      <div></div>
+      <div class="tracks">
+        <ul class="up">
+          <li class="up-1"><span data-type="4" data-direction="2">普</span></li>
+        </ul>
+        <ul class="down">
+          <li class="down-1"><span data-type="4" data-direction="1">普</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="station">
+      <div>
+        <i class="number"><span>43</span></i>
+        <div>
+          <h3>弘明寺</h3>
+          <ul class="train-types">
+            <li data-type="4">普</li>
+            <li data-type="3">急</li>
+          </ul>
+        </div>
+      </div>
+      <div class="tracks">
+        <ul class="up">
+          <li class="up-1" data-track="2"><span data-type="4" data-direction="2">普</span></li>
+        </ul>
+        <ul class="down">
+          <li class="down-1" data-track="1"><span data-type="4" data-direction="1">普</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="station-area" data-station="44">
+    <div class="gap">
+      <div></div>
+      <div class="tracks">
+        <ul class="up">
+          <li class="up-1"><span data-type="4" data-direction="2">普</span></li>
+        </ul>
+        <ul class="down">
+          <li class="down-1"><span data-type="4" data-direction="1">普</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="station">
+      <div>
+        <i class="number"><span>44</span></i>
+        <div>
+          <h3>上大岡</h3>
+          <ul class="train-types">
+            <li data-type="4">普</li>
+            <li data-type="3">急</li>
+            <li data-type="2">特</li>
+            <li data-type="1">快</li>
+          </ul>
+        </div>
+      </div>
+      <div class="tracks">
+        <ul class="up">
+          <li class="up-2" data-track="4"><span data-type="4" data-direction="2">普</span></li>
+          <li class="up-1" data-track="3"><span data-type="4" data-direction="2">普</span></li>
+        </ul>
+        <ul class="down">
+          <li class="down-1" data-track="2"><span data-type="4" data-direction="1">普</span></li>
+          <li class="down-2" data-track="1"><span data-type="4" data-direction="1">普</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="station-area" data-station="45">
+    <div class="gap">
+      <div></div>
+      <div class="tracks">
+        <ul class="up">
+          <li class="up-1"><span data-type="4" data-direction="2">普</span></li>
+        </ul>
+        <ul class="down">
+          <li class="down-1"><span data-type="4" data-direction="1">普</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="station">
+      <div>
+        <i class="number"><span>45</span></i>
+        <div>
+          <h3>屏風浦</h3>
+          <ul class="train-types">
+            <li data-type="4">普</li>
+          </ul>
+        </div>
+      </div>
+      <div class="tracks">
+        <ul class="up">
+          <li class="up-1" data-track="2"><span data-type="4" data-direction="2">普</span></li>
+        </ul>
+        <ul class="down">
+          <li class="down-1" data-track="1"><span data-type="4" data-direction="1">普</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="station-area" data-station="46">
+    <div class="gap">
+      <div></div>
+      <div class="tracks">
+        <ul class="up">
+          <li class="up-1"><span data-type="4" data-direction="2">普</span></li>
+        </ul>
+        <ul class="down">
+          <li class="down-1"><span data-type="4" data-direction="1">普</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="station">
+      <div>
+        <i class="number"><span>46</span></i>
+        <div>
+          <h3>杉田</h3>
+          <ul class="train-types">
+            <li data-type="4">普</li>
+            <li data-type="3">急</li>
+          </ul>
+        </div>
+      </div>
+      <div class="tracks">
+        <ul class="up">
+          <li class="up-1" data-track="2"><span data-type="4" data-direction="2">普</span></li>
+        </ul>
+        <ul class="down">
+          <li class="down-1" data-track="1"><span data-type="4" data-direction="1">普</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="station-area" data-station="47">
+    <div class="gap">
+      <div></div>
+      <div class="tracks">
+        <ul class="up">
+          <li class="up-1"><span data-type="4" data-direction="2">普</span></li>
+        </ul>
+        <ul class="down">
+          <li class="down-1"><span data-type="4" data-direction="1">普</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="station">
+      <div>
+        <i class="number"><span>47</span></i>
+        <div>
+          <h3>京急富岡</h3>
+          <ul class="train-types">
+            <li data-type="4">普</li>
+          </ul>
+        </div>
+      </div>
+      <div class="tracks">
+        <ul class="up">
+          <li class="up-2" data-track="3"><span data-type="4" data-direction="2">普</span></li>
+          <li class="up-1" data-track="2"><span data-type="4" data-direction="2">普</span></li>
+        </ul>
+        <ul class="down">
+          <li class="down-1" data-track="1"><span data-type="4" data-direction="1">普</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="station-area" data-station="48">
+    <div class="gap">
+      <div></div>
+      <div class="tracks">
+        <ul class="up">
+          <li class="up-1"><span data-type="4" data-direction="2">普</span></li>
+        </ul>
+        <ul class="down">
+          <li class="down-1"><span data-type="4" data-direction="1">普</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="station">
+      <div>
+        <i class="number"><span>48</span></i>
+        <div>
+          <h3>能見台</h3>
+          <ul class="train-types">
+            <li data-type="4">普</li>
+            <li data-type="3">急</li>
+          </ul>
+        </div>
+      </div>
+      <div class="tracks">
+        <ul class="up">
+          <li class="up-1" data-track="2"><span data-type="4" data-direction="2">普</span></li>
+        </ul>
+        <ul class="down">
+          <li class="down-1" data-track="1"><span data-type="4" data-direction="1">普</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="station-area" data-station="49">
+    <div class="gap">
+      <div></div>
+      <div class="tracks">
+        <ul class="up">
+          <li class="up-1"><span data-type="4" data-direction="2">普</span></li>
+        </ul>
+        <ul class="down">
+          <li class="down-1"><span data-type="4" data-direction="1">普</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="station">
+      <div>
+        <i class="number"><span>49</span></i>
+        <div>
+          <h3>金沢文庫</h3>
+          <ul class="train-types">
+            <li data-type="4">普</li>
+            <li data-type="3">急</li>
+            <li data-type="2">特</li>
+            <li data-type="1">快</li>
+          </ul>
+        </div>
+      </div>
+      <div class="tracks">
+        <ul class="up">
+          <li class="up-2" data-track="4"><span data-type="4" data-direction="2">普</span></li>
+          <li class="up-1" data-track="3"><span data-type="4" data-direction="2">普</span></li>
+        </ul>
+        <ul class="down">
+          <li class="down-1" data-track="2"><span data-type="4" data-direction="1">普</span></li>
+          <li class="down-2" data-track="1"><span data-type="4" data-direction="1">普</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="station-area" data-station="50">
+    <div class="gap">
+      <div></div>
+      <div class="tracks">
+        <ul class="up">
+          <li class="up-2"><span data-type="4" data-direction="2">普</span></li>
+          <li class="up-1"><span data-type="4" data-direction="2">普</span></li>
+        </ul>
+        <ul class="down">
+          <li class="down-1"><span data-type="4" data-direction="1">普</span></li>
+          <li class="down-2"><span data-type="4" data-direction="1">普</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="station">
+      <div>
+        <i class="number"><span>50</span></i>
+        <div>
+          <h3>金沢八景</h3>
+          <ul class="train-types">
+            <li data-type="4">普</li>
+            <li data-type="3">急</li>
+            <li data-type="2">特</li>
+            <li data-type="1">快</li>
+          </ul>
+        </div>
+      </div>
+      <div class="tracks">
+        <ul class="up">
+          <li class="up-2" data-track="4"><span data-type="4" data-direction="2">普</span></li>
+          <li class="up-1" data-track="3"><span data-type="4" data-direction="2">普</span></li>
+        </ul>
+        <ul class="down">
+          <li class="down-1" data-track="2"><span data-type="4" data-direction="1">普</span></li>
+          <li class="down-2" data-track="1"><span data-type="4" data-direction="1">普</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="station-area" data-station="54">
+    <div class="gap">
+      <div id="zushi">
+        <details>
+          <summary><h2>逗子線</h2></summary>
+          <div class="station-area" data-station="51">
+            <div class="gap">
+              <div></div>
+              <div class="tracks">
+                <ul class="up">
+                  <li class="up-1"><span data-type="4" data-direction="2">普</span></li>
+                </ul>
+                <ul class="down">
+                  <li class="down-1"><span data-type="4" data-direction="1">普</span></li>
+                </ul>
+              </div>
+            </div>
+            <div class="station">
+              <div>
+                <i class="number"><span>51</span></i>
+                <div>
+                  <h3>六浦</h3>
+                  <ul class="train-types">
+                    <li data-type="4">普</li>
+                    <li data-type="3">急</li>
+                    <li data-type="2">特</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="tracks">
+                <ul class="up">
+                  <li class="up-1" data-track="2"><span data-type="4" data-direction="2">普</span></li>
+                </ul>
+                <ul class="down">
+                  <li class="down-1" data-track="1"><span data-type="4" data-direction="1">普</span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="station-area" data-station="52">
+            <div class="gap">
+              <div></div>
+              <div class="tracks">
+                <ul class="up">
+                  <li class="up-1"><span data-type="4" data-direction="2">普</span></li>
+                </ul>
+                <ul class="down">
+                  <li class="down-1"><span data-type="4" data-direction="1">普</span></li>
+                </ul>
+              </div>
+            </div>
+            <div class="station">
+              <div>
+                <i class="number"><span>52</span></i>
+                <div>
+                  <h3>神武寺</h3>
+                  <ul class="train-types">
+                    <li data-type="4">普</li>
+                    <li data-type="3">急</li>
+                    <li data-type="2">特</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="tracks">
+                <ul class="up">
+                  <li class="up-1" data-track="2"><span data-type="4" data-direction="2">普</span></li>
+                </ul>
+                <ul class="down">
+                  <li class="down-1" data-track="1"><span data-type="4" data-direction="1">普</span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="station-area" data-station="53">
+            <div class="gap">
+              <div></div>
+              <div class="tracks">
+                <ul class="up">
+                  <li class="up-1"><span data-type="4" data-direction="2">普</span></li>
+                </ul>
+                <ul class="down">
+                  <li class="down-1"><span data-type="4" data-direction="1">普</span></li>
+                </ul>
+              </div>
+            </div>
+            <div class="station">
+              <div>
+                <i class="number"><span>53</span></i>
+                <div>
+                  <h3>逗子・葉山</h3>
+                  <ul class="train-types">
+                    <li data-type="4">普</li>
+                    <li data-type="3">急</li>
+                    <li data-type="2">特</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="tracks">
+                <ul class="up"></ul>
+                <ul class="down">
+                  <li class="down-1" data-track="1"><span data-type="4" data-direction="2">普</span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </details>
+      </div>
+      <div class="tracks">
+        <ul class="up">
+          <li class="up-1"><span data-type="4" data-direction="2">普</span></li>
+        </ul>
+        <ul class="down">
+          <li class="down-1"><span data-type="4" data-direction="1">普</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="station">
+      <div>
+        <i class="number"><span>54</span></i>
+        <div>
+          <h3>追浜</h3>
+          <ul class="train-types">
+            <li data-type="4">普</li>
+            <li data-type="2">特</li>
+          </ul>
+        </div>
+      </div>
+      <div class="tracks">
+        <ul class="up">
+          <li class="up-1" data-track="2"><span data-type="4" data-direction="2">普</span></li>
+        </ul>
+        <ul class="down">
+          <li class="down-1" data-track="1"><span data-type="4" data-direction="1">普</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="station-area" data-station="55">
+    <div class="gap">
+      <div></div>
+      <div class="tracks">
+        <ul class="up">
+          <li class="up-1"><span data-type="4" data-direction="2">普</span></li>
+        </ul>
+        <ul class="down">
+          <li class="down-1"><span data-type="4" data-direction="1">普</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="station">
+      <div>
+        <i class="number"><span>55</span></i>
+        <div>
+          <h3>京急田浦</h3>
+          <ul class="train-types">
+            <li data-type="4">普</li>
+          </ul>
+        </div>
+      </div>
+      <div class="tracks">
+        <ul class="up">
+          <li class="up-1" data-track="2"><span data-type="4" data-direction="2">普</span></li>
+        </ul>
+        <ul class="down">
+          <li class="down-1" data-track="1"><span data-type="4" data-direction="1">普</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="station-area" data-station="56">
+    <div class="gap">
+      <div></div>
+      <div class="tracks">
+        <ul class="up">
+          <li class="up-1"><span data-type="4" data-direction="2">普</span></li>
+        </ul>
+        <ul class="down">
+          <li class="down-1"><span data-type="4" data-direction="1">普</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="station">
+      <div>
+        <i class="number"><span>56</span></i>
+        <div>
+          <h3>安針塚</h3>
+          <ul class="train-types">
+            <li data-type="4">普</li>
+          </ul>
+        </div>
+      </div>
+      <div class="tracks">
+        <ul class="up">
+          <li class="up-1" data-track="2"><span data-type="4" data-direction="2">普</span></li>
+        </ul>
+        <ul class="down">
+          <li class="down-1" data-track="1"><span data-type="4" data-direction="1">普</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="station-area" data-station="57">
+    <div class="gap">
+      <div></div>
+      <div class="tracks">
+        <ul class="up">
+          <li class="up-1"><span data-type="4" data-direction="2">普</span></li>
+        </ul>
+        <ul class="down">
+          <li class="down-1"><span data-type="4" data-direction="1">普</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="station">
+      <div>
+        <i class="number"><span>57</span></i>
+        <div>
+          <h3>逸見</h3>
+          <ul class="train-types">
+            <li data-type="4">普</li>
+          </ul>
+        </div>
+      </div>
+      <div class="tracks">
+        <ul class="up">
+          <li class="up-2" data-track="4"><span data-type="4" data-direction="2">普</span></li>
+          <li class="up-1" data-track="3"><span data-type="4" data-direction="2">普</span></li>
+        </ul>
+        <ul class="down">
+          <li class="down-1" data-track="2"><span data-type="4" data-direction="1">普</span></li>
+          <li class="down-2" data-track="1"><span data-type="4" data-direction="1">普</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="station-area" data-station="58">
+    <div class="gap">
+      <div></div>
+      <div class="tracks">
+        <ul class="up">
+          <li class="up-1"><span data-type="4" data-direction="2">普</span></li>
+        </ul>
+        <ul class="down">
+          <li class="down-1"><span data-type="4" data-direction="1">普</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="station">
+      <div>
+        <i class="number"><span>58</span></i>
+        <div>
+          <h3>汐入</h3>
+          <ul class="train-types">
+            <li data-type="4">普</li>
+            <li data-type="2">特</li>
+          </ul>
+        </div>
+      </div>
+      <div class="tracks">
+        <ul class="up">
+          <li class="up-1" data-track="2"><span data-type="4" data-direction="2">普</span></li>
+        </ul>
+        <ul class="down">
+          <li class="down-1" data-track="1"><span data-type="4" data-direction="1">普</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="station-area" data-station="59">
+    <div class="gap">
+      <div></div>
+      <div class="tracks">
+        <ul class="up">
+          <li class="up-1"><span data-type="4" data-direction="2">普</span></li>
+        </ul>
+        <ul class="down">
+          <li class="down-1"><span data-type="4" data-direction="1">普</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="station">
+      <div>
+        <i class="number"><span>59</span></i>
+        <div>
+          <h3>横須賀中央</h3>
+          <ul class="train-types">
+            <li data-type="4">普</li>
+            <li data-type="2">特</li>
+            <li data-type="1">快</li>
+          </ul>
+        </div>
+      </div>
+      <div class="tracks">
+        <ul class="up">
+          <li class="up-1" data-track="2"><span data-type="4" data-direction="2">普</span></li>
+        </ul>
+        <ul class="down">
+          <li class="down-1" data-track="1"><span data-type="4" data-direction="1">普</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="station-area" data-station="60">
+    <div class="gap">
+      <div></div>
+      <div class="tracks">
+        <ul class="up">
+          <li class="up-1"><span data-type="4" data-direction="2">普</span></li>
+        </ul>
+        <ul class="down">
+          <li class="down-1"><span data-type="4" data-direction="1">普</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="station">
+      <div>
+        <i class="number"><span>60</span></i>
+        <div>
+          <h3>県立大学</h3>
+          <ul class="train-types">
+            <li data-type="4">普</li>
+          </ul>
+        </div>
+      </div>
+      <div class="tracks">
+        <ul class="up">
+          <li class="up-1" data-track="2"><span data-type="4" data-direction="2">普</span></li>
+        </ul>
+        <ul class="down">
+          <li class="down-1" data-track="1"><span data-type="4" data-direction="1">普</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="station-area" data-station="61">
+    <div class="gap">
+      <div></div>
+      <div class="tracks">
+        <ul class="up">
+          <li class="up-1"><span data-type="4" data-direction="2">普</span></li>
+        </ul>
+        <ul class="down">
+          <li class="down-1"><span data-type="4" data-direction="1">普</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="station">
+      <div>
+        <i class="number"><span>61</span></i>
+        <div>
+          <h3>堀ノ内</h3>
+          <ul class="train-types">
+            <li data-type="4">普</li>
+            <li data-type="2">特</li>
+            <li data-type="1">快</li>
+          </ul>
+        </div>
+      </div>
+      <div class="tracks">
+        <ul class="up">
+          <li class="up-2" data-track="4"><span data-type="4" data-direction="2">普</span></li>
+          <li class="up-1" data-track="3"><span data-type="4" data-direction="2">普</span></li>
+        </ul>
+        <ul class="down">
+          <li class="down-1" data-track="2"><span data-type="4" data-direction="1">普</span></li>
+          <li class="down-2" data-track="1"><span data-type="4" data-direction="1">普</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="station-area" data-station="62">
+    <div class="gap">
+      <div id="kurihama">
+        <details>
+          <summary><h2>久里浜線</h2></summary>
+          <div class="station-area" data-station="65">
+            <div class="gap">
+              <div></div>
+              <div class="tracks">
+                <ul class="up">
+                  <li class="up-1"><span data-type="4" data-direction="2">普</span></li>
+                </ul>
+                <ul class="down">
+                  <li class="down-1"><span data-type="4" data-direction="1">普</span></li>
+                </ul>
+              </div>
+            </div>
+            <div class="station">
+              <div>
+                <i class="number"><span>65</span></i>
+                <div>
+                  <h3>新大津</h3>
+                  <ul class="train-types">
+                    <li data-type="4">普</li>
+                    <li data-type="2">特</li>
+                    <li data-type="1">快</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="tracks">
+                <ul class="up">
+                  <li class="up-1" data-track="2"><span data-type="4" data-direction="2">普</span></li>
+                </ul>
+                <ul class="down">
+                  <li class="down-1" data-track="1"><span data-type="4" data-direction="1">普</span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="station-area" data-station="66">
+            <div class="gap">
+              <div></div>
+              <div class="tracks">
+                <ul class="up">
+                  <li class="up-1"><span data-type="4" data-direction="2">普</span></li>
+                </ul>
+                <ul class="down">
+                  <li class="down-1"><span data-type="4" data-direction="1">普</span></li>
+                </ul>
+              </div>
+            </div>
+            <div class="station">
+              <div>
+                <i class="number"><span>66</span></i>
+                <div>
+                  <h3>北久里浜</h3>
+                  <ul class="train-types">
+                    <li data-type="4">普</li>
+                    <li data-type="2">特</li>
+                    <li data-type="1">快</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="tracks">
+                <ul class="up">
+                  <li class="up-1" data-track="2"><span data-type="4" data-direction="2">普</span></li>
+                </ul>
+                <ul class="down">
+                  <li class="down-1" data-track="1"><span data-type="4" data-direction="1">普</span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="station-area" data-station="67">
+            <div class="gap">
+              <div></div>
+              <div class="tracks">
+                <ul class="up">
+                  <li class="up-1"><span data-type="4" data-direction="2">普</span></li>
+                </ul>
+                <ul class="down">
+                  <li class="down-1"><span data-type="4" data-direction="1">普</span></li>
+                </ul>
+              </div>
+            </div>
+            <div class="station">
+              <div>
+                <i class="number"><span>67</span></i>
+                <div>
+                  <h3>京急久里浜</h3>
+                  <ul class="train-types">
+                    <li data-type="4">普</li>
+                    <li data-type="2">特</li>
+                    <li data-type="1">快</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="tracks">
+                <ul class="up">
+                  <li class="up-2" data-track="3"><span data-type="4" data-direction="2">普</span></li>
+                  <li class="up-1" data-track="2"><span data-type="4" data-direction="2">普</span></li>
+                </ul>
+                <ul class="down">
+                  <li class="down-1" data-track=""><span data-type="4" data-direction="1">普</span></li>
+                  <li class="down-2" data-track="1"><span data-type="4" data-direction="1">普</span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="station-area" data-station="68">
+            <div class="gap">
+              <div></div>
+              <div class="tracks">
+                <ul class="up">
+                  <li class="up-1"><span data-type="4" data-direction="2">普</span></li>
+                </ul>
+                <ul class="down">
+                  <li class="down-1"><span data-type="4" data-direction="1">普</span></li>
+                </ul>
+              </div>
+            </div>
+            <div class="station">
+              <div>
+                <i class="number"><span>68</span></i>
+                <div>
+                  <h3>YRP野比</h3>
+                  <ul class="train-types">
+                    <li data-type="4">普</li>
+                    <li data-type="2">特</li>
+                    <li data-type="1">快</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="tracks">
+                <ul class="up">
+                  <li class="up-1" data-track="2"><span data-type="4" data-direction="2">普</span></li>
+                </ul>
+                <ul class="down">
+                  <li class="down-1" data-track="1"><span data-type="4" data-direction="1">普</span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="station-area" data-station="69">
+            <div class="gap">
+              <div></div>
+              <div class="tracks">
+                <ul class="up">
+                  <li class="up-1"><span data-type="4" data-direction="2">普</span></li>
+                </ul>
+                <ul class="down">
+                  <li class="down-1"><span data-type="4" data-direction="1">普</span></li>
+                </ul>
+              </div>
+            </div>
+            <div class="station">
+              <div>
+                <i class="number"><span>69</span></i>
+                <div>
+                  <h3>京急長沢</h3>
+                  <ul class="train-types">
+                    <li data-type="4">普</li>
+                    <li data-type="2">特</li>
+                    <li data-type="1">快</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="tracks">
+                <ul class="up">
+                  <li class="up-1" data-track="2"><span data-type="4" data-direction="2">普</span></li>
+                </ul>
+                <ul class="down">
+                  <li class="down-1" data-track="1"><span data-type="4" data-direction="1">普</span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="station-area" data-station="70">
+            <div class="gap">
+              <div></div>
+              <div class="tracks">
+                <ul class="up">
+                  <li class="up-1"><span data-type="4" data-direction="2">普</span></li>
+                </ul>
+                <ul class="down">
+                  <li class="down-1"><span data-type="4" data-direction="1">普</span></li>
+                </ul>
+              </div>
+            </div>
+            <div class="station">
+              <div>
+                <i class="number"><span>70</span></i>
+                <div>
+                  <h3>津久井浜</h3>
+                  <ul class="train-types">
+                    <li data-type="4">普</li>
+                    <li data-type="2">特</li>
+                    <li data-type="1">快</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="tracks">
+                <ul class="up">
+                  <li class="up-1" data-track="2"><span data-type="4" data-direction="2">普</span></li>
+                </ul>
+                <ul class="down">
+                  <li class="down-1" data-track="1"><span data-type="4" data-direction="1">普</span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="station-area" data-station="71">
+            <div class="gap">
+              <div></div>
+              <div class="tracks">
+                <ul class="up">
+                  <li class="up-1"><span data-type="4" data-direction="2">普</span></li>
+                </ul>
+                <ul class="down">
+                  <li class="down-1"><span data-type="4" data-direction="1">普</span></li>
+                </ul>
+              </div>
+            </div>
+            <div class="station">
+              <div>
+                <i class="number"><span>71</span></i>
+                <div>
+                  <h3>三浦海岸</h3>
+                  <ul class="train-types">
+                    <li data-type="4">普</li>
+                    <li data-type="2">特</li>
+                    <li data-type="1">快</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="tracks">
+                <ul class="up">
+                  <li class="up-1" data-track="2"><span data-type="4" data-direction="2">普</span></li>
+                </ul>
+                <ul class="down">
+                  <li class="down-1" data-track="1"><span data-type="4" data-direction="1">普</span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="station-area" data-station="72">
+            <div class="gap">
+              <div></div>
+              <div class="tracks">
+                <ul class="up">
+                  <li class="up-1"><span data-type="4" data-direction="2">普</span></li>
+                </ul>
+                <ul class="down">
+                  <li class="down-1"><span data-type="4" data-direction="1">普</span></li>
+                </ul>
+              </div>
+            </div>
+            <div class="station">
+              <div>
+                <i class="number"><span>72</span></i>
+                <div>
+                  <h3>三崎口</h3>
+                  <ul class="train-types">
+                    <li data-type="4">普</li>
+                    <li data-type="2">特</li>
+                    <li data-type="1">快</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="tracks">
+                <ul class="up">
+                  <li class="up-1" data-track="2"><span data-type="4" data-direction="2">普</span></li>
+                </ul>
+                <ul class="down">
+                  <li class="down-1" data-track="1"><span data-type="4" data-direction="2">普</span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </details>
+      </div>
+      <div class="tracks">
+        <ul class="up">
+          <li class="up-1"><span data-type="4" data-direction="2">普</span></li>
+        </ul>
+        <ul class="down">
+          <li class="down-1"><span data-type="4" data-direction="1">普</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="station">
+      <div>
+        <i class="number"><span>62</span></i>
+        <div>
+          <h3>京急大津</h3>
+          <ul class="train-types">
+            <li data-type="4">普</li>
+            <li data-type="2">特</li>
+          </ul>
+        </div>
+      </div>
+      <div class="tracks">
+        <ul class="up">
+          <li class="up-1" data-track="2"><span data-type="4" data-direction="2">普</span></li>
+        </ul>
+        <ul class="down">
+          <li class="down-1" data-track="1"><span data-type="4" data-direction="1">普</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="station-area" data-station="63">
+    <div class="gap">
+      <div></div>
+      <div class="tracks">
+        <ul class="up">
+          <li class="up-1"><span data-type="4" data-direction="2">普</span></li>
+        </ul>
+        <ul class="down">
+          <li class="down-1"><span data-type="4" data-direction="1">普</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="station">
+      <div>
+        <i class="number"><span>63</span></i>
+        <div>
+          <h3>馬堀海岸</h3>
+          <ul class="train-types">
+            <li data-type="4">普</li>
+            <li data-type="2">特</li>
+          </ul>
+        </div>
+      </div>
+      <div class="tracks">
+        <ul class="up">
+          <li class="up-1" data-track="2"><span data-type="4" data-direction="2">普</span></li>
+        </ul>
+        <ul class="down">
+          <li class="down-1" data-track="1"><span data-type="4" data-direction="1">普</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="station-area" data-station="64">
+    <div class="gap">
+      <div></div>
+      <div class="tracks">
+        <ul class="up">
+          <li class="up-1"><span data-type="4" data-direction="2">普</span></li>
+        </ul>
+        <ul class="down">
+          <li class="down-1"><span data-type="4" data-direction="1">普</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="station">
+      <div>
+        <i class="number"><span>64</span></i>
+        <div>
+          <h3>浦賀</h3>
+          <ul class="train-types">
+            <li data-type="4">普</li>
+            <li data-type="2">特</li>
+          </ul>
+        </div>
+      </div>
+      <div class="tracks">
+        <ul class="up">
+          <li class="up-1" data-track="2"><span data-type="4" data-direction="2">普</span></li>
+        </ul>
+        <ul class="down">
+          <li class="down-1" data-track="1"><span data-type="4" data-direction="1">普</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</main>
+
+<script type="module" src="./js/index.js"></script>
+
+</body>
+</html>

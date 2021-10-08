@@ -1,0 +1,51 @@
+[
+    {
+        "id": 4,
+        "is_out_of_service": false,
+        "type_name": "普通",
+        "abbreviation": "普",
+        "color": "000"
+    },
+    {
+        "id": 3,
+        "is_out_of_service": false,
+        "type_name": "エアポート急行",
+        "abbreviation": "急",
+        "color": null
+    },
+    {
+        "id": 2,
+        "is_out_of_service": false,
+        "type_name": "特急",
+        "abbreviation": "特",
+        "color": null
+    },
+    {
+        "id": 1,
+        "is_out_of_service": false,
+        "type_name": "快特",
+        "abbreviation": "快",
+        "color": null
+    },
+    {
+        "id": 6,
+        "is_out_of_service": false,
+        "type_name": "エアポート快特",
+        "abbreviation": "快",
+        "color": null
+    },
+    {
+        "id": 12,
+        "is_out_of_service": false,
+        "type_name": "ウイング号",
+        "abbreviation": "W",
+        "color": null
+    },
+    {
+        "id": 8,
+        "is_out_of_service": true,
+        "type_name": "回送",
+        "abbreviation": "回",
+        "color": null
+    }
+]
