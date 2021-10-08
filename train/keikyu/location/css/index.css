@@ -8,6 +8,12 @@ body {
     margin: 0;
 }
 
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #333;
+    }
+}
+
 header {
     align-items: center;
     background-color: #0099cb;
@@ -16,6 +22,12 @@ header {
     position: sticky;
     top: 0;
     z-index: 999;
+}
+
+@media (prefers-color-scheme: dark) {
+    header {
+        background-color: #004e67;
+    }
 }
 
 h1 {
@@ -51,6 +63,12 @@ h2 {
     margin: 0;
 }
 
+@media (prefers-color-scheme: dark) {
+    h2 {
+        color: #ddd;
+    }
+}
+
 .gap {
     display: flex;
     padding: 0 .5rem 0 0;
@@ -74,6 +92,12 @@ h2 {
     background-color: #efefef;
     display: flex;
     padding: .5rem .5rem .5rem .5rem;
+}
+
+@media (prefers-color-scheme: dark) {
+    .station {
+        background-color: #3f3f3f;
+    }
 }
 
 .station > div {
@@ -107,6 +131,12 @@ h2 {
     width: 100%;
 }
 
+@media (prefers-color-scheme: dark) {
+    .number::before {
+        color: #ddd;
+    }
+}
+
 .number > span {
     bottom: -.1rem;
     display: block;
@@ -115,9 +145,25 @@ h2 {
     width: 100%;
 }
 
+@media (prefers-color-scheme: dark) {
+    .number > span {
+        color: #ddd;
+    }
+}
+
+summary {
+    outline: none;
+}
+
 h3 {
     font-size: 1rem;
     margin: 0 0 0 .5rem;
+}
+
+@media (prefers-color-scheme: dark) {
+    h3 {
+        color: #ddd;
+    }
 }
 
 .train-types {
