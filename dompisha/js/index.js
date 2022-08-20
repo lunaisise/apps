@@ -11,7 +11,7 @@ window.addEventListener('DOMContentLoaded', () => {
                 },
                 audio: false
             });
-            document.getElementById('video');
+            document.getElementById('video').srcObject = stream;
         } catch (e) {
             console.log(e);
         }
