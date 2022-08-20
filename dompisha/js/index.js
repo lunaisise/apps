@@ -6,7 +6,7 @@ window.addEventListener('DOMContentLoaded', () => {
                     width: 1280,
                     height: 720,
                     facingMode: {
-                        // exact: 'environment'
+                        exact: 'environment'
                     }
                 },
                 audio: false
