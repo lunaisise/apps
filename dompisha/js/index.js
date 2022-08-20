@@ -12,6 +12,7 @@ window.addEventListener('DOMContentLoaded', () => {
                 audio: false
             });
             document.getElementById('video').srcObject = stream;
+            alert('nya-');
         } catch (e) {
             console.log(e);
         }
