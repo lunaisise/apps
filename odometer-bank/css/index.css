@@ -18,7 +18,7 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    min-height: 100dvh;
+    min-height: 100vh;
     margin: 0;
     padding-bottom: 5rem;
 }
@@ -115,7 +115,7 @@ body {
         / 1fr 1fr;
     gap: 4rem;
     left: 0;
-    padding-bottom: env(safe-area-inset-bottom);
+    padding-bottom: calc(env(safe-area-inset-bottom) + 44px);
     position: fixed;
     width: 100%;
 }
@@ -147,7 +147,7 @@ body {
 }
 
 .add__button-block {
-    bottom: env(safe-area-inset-bottom);
+    bottom: calc(env(safe-area-inset-bottom) + 44px);
     display: flex;
     justify-content: center;
     left: calc(50vw - 2rem);
